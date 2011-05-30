@@ -7,12 +7,11 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
-our $ISA     = qw/QDomCharacterData/;
+our $VERSION = '0.01_02';
+our $ISA     = qw/Qt::Xml::QDomCharacterData/;
 
 
 # FIXME: operator overload
-
 
 
 1;
@@ -25,15 +24,22 @@ Qt::Xml::QDomText
 
 =over
 
-=item    QDomText()
+=item   QDomText()
 
-=item    QDomText(const QDomText & x)
+=item   QDomText()
 
-=item   QDomNode::NodeType nodeType()
+=item  QDomNode::NodeType nodeType()
 
-=item   QDomText & operator=(const QDomText & arg0)
+=item  QDomText & operator=()
 
-=item   QDomText splitText(int offset)
+=item  QDomText splitText()
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
 
 
 =back

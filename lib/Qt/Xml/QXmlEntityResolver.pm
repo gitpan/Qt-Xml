@@ -7,11 +7,10 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
+our $VERSION = '0.01_02';
 
 
 # FIXME: operator overload
-
 
 
 1;
@@ -24,11 +23,18 @@ Qt::Xml::QXmlEntityResolver
 
 =over
 
-=item    ~QXmlEntityResolver()
+=item   ~QXmlEntityResolver()
 
-=item   QString errorString()
+=item  QString errorString()
 
-=item   bool resolveEntity(const QString & publicId, const QString & systemId, QXmlInputSource *& ret)
+=item  bool resolveEntity(, , )
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
 
 
 =back

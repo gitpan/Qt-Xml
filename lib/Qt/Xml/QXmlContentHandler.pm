@@ -7,11 +7,10 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
+our $VERSION = '0.01_02';
 
 
 # FIXME: operator overload
-
 
 
 1;
@@ -24,31 +23,38 @@ Qt::Xml::QXmlContentHandler
 
 =over
 
-=item    ~QXmlContentHandler()
+=item   ~QXmlContentHandler()
 
-=item   bool characters(const QString & ch)
+=item  bool characters()
 
-=item   bool endDocument()
+=item  bool endDocument()
 
-=item   bool endElement(const QString & namespaceURI, const QString & localName, const QString & qName)
+=item  bool endElement(, , )
 
-=item   bool endPrefixMapping(const QString & prefix)
+=item  bool endPrefixMapping()
 
-=item   QString errorString()
+=item  QString errorString()
 
-=item   bool ignorableWhitespace(const QString & ch)
+=item  bool ignorableWhitespace()
 
-=item   bool processingInstruction(const QString & target, const QString & data)
+=item  bool processingInstruction(, )
 
-=item   void setDocumentLocator(QXmlLocator * locator)
+=item  void setDocumentLocator()
 
-=item   bool skippedEntity(const QString & name)
+=item  bool skippedEntity()
 
-=item   bool startDocument()
+=item  bool startDocument()
 
-=item   bool startElement(const QString & namespaceURI, const QString & localName, const QString & qName, const QXmlAttributes & atts)
+=item  bool startElement(, , , )
 
-=item   bool startPrefixMapping(const QString & prefix, const QString & uri)
+=item  bool startPrefixMapping(, )
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
 
 
 =back

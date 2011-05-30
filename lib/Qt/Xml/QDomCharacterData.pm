@@ -7,12 +7,11 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
-our $ISA     = qw/QDomNode/;
+our $VERSION = '0.01_02';
+our $ISA     = qw/Qt::Xml::QDomNode/;
 
 
 # FIXME: operator overload
-
 
 
 1;
@@ -25,29 +24,36 @@ Qt::Xml::QDomCharacterData
 
 =over
 
-=item    QDomCharacterData()
+=item   QDomCharacterData()
 
-=item    QDomCharacterData(const QDomCharacterData & x)
+=item   QDomCharacterData()
 
-=item   void appendData(const QString & arg)
+=item  void appendData()
 
-=item   QString data()
+=item  QString data()
 
-=item   void deleteData(unsigned long offset, unsigned long count)
+=item  void deleteData(, )
 
-=item   void insertData(unsigned long offset, const QString & arg)
+=item  void insertData(, )
 
-=item   uint length()
+=item  uint length()
 
-=item   QDomNode::NodeType nodeType()
+=item  QDomNode::NodeType nodeType()
 
-=item   QDomCharacterData & operator=(const QDomCharacterData & arg0)
+=item  QDomCharacterData & operator=()
 
-=item   void replaceData(unsigned long offset, unsigned long count, const QString & arg)
+=item  void replaceData(, , )
 
-=item   void setData(const QString & arg0)
+=item  void setData()
 
-=item   QString substringData(unsigned long offset, unsigned long count)
+=item  QString substringData(, )
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
 
 
 =back

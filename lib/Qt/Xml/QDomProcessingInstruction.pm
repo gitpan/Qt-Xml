@@ -7,12 +7,11 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
-our $ISA     = qw/QDomNode/;
+our $VERSION = '0.01_02';
+our $ISA     = qw/Qt::Xml::QDomNode/;
 
 
 # FIXME: operator overload
-
 
 
 1;
@@ -25,19 +24,26 @@ Qt::Xml::QDomProcessingInstruction
 
 =over
 
-=item    QDomProcessingInstruction()
+=item   QDomProcessingInstruction()
 
-=item    QDomProcessingInstruction(const QDomProcessingInstruction & x)
+=item   QDomProcessingInstruction()
 
-=item   QString data()
+=item  QString data()
 
-=item   QDomNode::NodeType nodeType()
+=item  QDomNode::NodeType nodeType()
 
-=item   QDomProcessingInstruction & operator=(const QDomProcessingInstruction & arg0)
+=item  QDomProcessingInstruction & operator=()
 
-=item   void setData(const QString & d)
+=item  void setData()
 
-=item   QString target()
+=item  QString target()
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
 
 
 =back

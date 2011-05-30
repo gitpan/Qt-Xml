@@ -7,11 +7,10 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
+our $VERSION = '0.01_02';
 
 
 # FIXME: operator overload
-
 
 
 1;
@@ -24,51 +23,58 @@ Qt::Xml::QXmlReader
 
 =over
 
-=item    ~QXmlReader()
+=item   ~QXmlReader()
 
-=item   QXmlDTDHandler * DTDHandler()
+=item  QXmlDTDHandler * DTDHandler()
 
-=item   QXmlContentHandler * contentHandler()
+=item  QXmlContentHandler * contentHandler()
 
-=item   QXmlDeclHandler * declHandler()
+=item  QXmlDeclHandler * declHandler()
 
-=item   QXmlEntityResolver * entityResolver()
+=item  QXmlEntityResolver * entityResolver()
 
-=item   QXmlErrorHandler * errorHandler()
+=item  QXmlErrorHandler * errorHandler()
 
-=item   bool feature(const QString & name, bool * ok = 0)
+=item  bool feature(, )
 
-=item   bool feature(const QString & name, bool * ok)
+=item  bool feature(,  = 0)
 
-=item   bool hasFeature(const QString & name)
+=item  bool hasFeature()
 
-=item   bool hasProperty(const QString & name)
+=item  bool hasProperty()
 
-=item   QXmlLexicalHandler * lexicalHandler()
+=item  QXmlLexicalHandler * lexicalHandler()
 
-=item   bool parse(const QXmlInputSource & input)
+=item  bool parse()
 
-=item   bool parse(const QXmlInputSource * input)
+=item  bool parse()
 
-=item   void * property(const QString & name, bool * ok = 0)
+=item  void * property(, )
 
-=item   void * property(const QString & name, bool * ok)
+=item  void * property(,  = 0)
 
-=item   void setContentHandler(QXmlContentHandler * handler)
+=item  void setContentHandler()
 
-=item   void setDTDHandler(QXmlDTDHandler * handler)
+=item  void setDTDHandler()
 
-=item   void setDeclHandler(QXmlDeclHandler * handler)
+=item  void setDeclHandler()
 
-=item   void setEntityResolver(QXmlEntityResolver * handler)
+=item  void setEntityResolver()
 
-=item   void setErrorHandler(QXmlErrorHandler * handler)
+=item  void setErrorHandler()
 
-=item   void setFeature(const QString & name, bool value)
+=item  void setFeature(, )
 
-=item   void setLexicalHandler(QXmlLexicalHandler * handler)
+=item  void setLexicalHandler()
 
-=item   void setProperty(const QString & name, void * value)
+=item  void setProperty(, )
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
 
 
 =back

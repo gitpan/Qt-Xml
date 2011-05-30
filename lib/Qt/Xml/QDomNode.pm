@@ -7,29 +7,10 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
+our $VERSION = '0.01_02';
 
 
 # FIXME: operator overload
-
-# enums
-# enum value in perl is enum item index number
-sub ElementNode() { 0 }
-sub AttributeNode() { 1 }
-sub TextNode() { 2 }
-sub CDATASectionNode() { 3 }
-sub EntityReferenceNode() { 4 }
-sub EntityNode() { 5 }
-sub ProcessingInstructionNode() { 6 }
-sub CommentNode() { 7 }
-sub DocumentNode() { 8 }
-sub DocumentTypeNode() { 9 }
-sub DocumentFragmentNode() { 10 }
-sub NotationNode() { 11 }
-sub BaseNode() { 12 }
-sub CharacterDataNode() { 13 }
-sub EncodingFromDocument() { 0 }
-sub EncodingFromTextStream() { 1 }
 
 
 1;
@@ -42,153 +23,192 @@ Qt::Xml::QDomNode
 
 =over
 
-=item    QDomNode()
+=item   QDomNode()
 
-=item    QDomNode(const QDomNode & arg0)
+=item   QDomNode()
 
-=item    ~QDomNode()
+=item   ~QDomNode()
 
-=item   QDomNode appendChild(const QDomNode & newChild)
+=item  QDomNode appendChild()
 
-=item   QDomNamedNodeMap attributes()
+=item  QDomNamedNodeMap attributes()
 
-=item   QDomNodeList childNodes()
+=item  QDomNodeList childNodes()
 
-=item   void clear()
+=item  void clear()
 
-=item   QDomNode cloneNode(bool deep = true)
+=item  QDomNode cloneNode()
 
-=item   QDomNode cloneNode(bool deep)
+=item  QDomNode cloneNode( = true)
 
-=item   int columnNumber()
+=item  int columnNumber()
 
-=item   QDomNode firstChild()
+=item  QDomNode firstChild()
 
-=item   QDomElement firstChildElement(const QString & tagName = QString())
+=item  QDomElement firstChildElement()
 
-=item   QDomElement firstChildElement(const QString & tagName)
+=item  QDomElement firstChildElement( = QString())
 
-=item   bool hasAttributes()
+=item  bool hasAttributes()
 
-=item   bool hasChildNodes()
+=item  bool hasChildNodes()
 
-=item   QDomNode insertAfter(const QDomNode & newChild, const QDomNode & refChild)
+=item  QDomNode insertAfter(, )
 
-=item   QDomNode insertBefore(const QDomNode & newChild, const QDomNode & refChild)
+=item  QDomNode insertBefore(, )
 
-=item   bool isAttr()
+=item  bool isAttr()
 
-=item   bool isCDATASection()
+=item  bool isCDATASection()
 
-=item   bool isCharacterData()
+=item  bool isCharacterData()
 
-=item   bool isComment()
+=item  bool isComment()
 
-=item   bool isDocument()
+=item  bool isDocument()
 
-=item   bool isDocumentFragment()
+=item  bool isDocumentFragment()
 
-=item   bool isDocumentType()
+=item  bool isDocumentType()
 
-=item   bool isElement()
+=item  bool isElement()
 
-=item   bool isEntity()
+=item  bool isEntity()
 
-=item   bool isEntityReference()
+=item  bool isEntityReference()
 
-=item   bool isNotation()
+=item  bool isNotation()
 
-=item   bool isNull()
+=item  bool isNull()
 
-=item   bool isProcessingInstruction()
+=item  bool isProcessingInstruction()
 
-=item   bool isSupported(const QString & feature, const QString & version)
+=item  bool isSupported(, )
 
-=item   bool isText()
+=item  bool isText()
 
-=item   QDomNode lastChild()
+=item  QDomNode lastChild()
 
-=item   QDomElement lastChildElement(const QString & tagName = QString())
+=item  QDomElement lastChildElement()
 
-=item   QDomElement lastChildElement(const QString & tagName)
+=item  QDomElement lastChildElement( = QString())
 
-=item   int lineNumber()
+=item  int lineNumber()
 
-=item   QString localName()
+=item  QString localName()
 
-=item   QDomNode namedItem(const QString & name)
+=item  QDomNode namedItem()
 
-=item   QString namespaceURI()
+=item  QString namespaceURI()
 
-=item   QDomNode nextSibling()
+=item  QDomNode nextSibling()
 
-=item   QDomElement nextSiblingElement(const QString & taName = QString())
+=item  QDomElement nextSiblingElement()
 
-=item   QDomElement nextSiblingElement(const QString & taName)
+=item  QDomElement nextSiblingElement( = QString())
 
-=item   QString nodeName()
+=item  QString nodeName()
 
-=item   QDomNode::NodeType nodeType()
+=item  QDomNode::NodeType nodeType()
 
-=item   QString nodeValue()
+=item  QString nodeValue()
 
-=item   void normalize()
+=item  void normalize()
 
-=item   bool operator!=(const QDomNode & arg0)
+=item  bool operator!=()
 
-=item   QDomNode & operator=(const QDomNode & arg0)
+=item  QDomNode & operator=()
 
-=item   bool operator==(const QDomNode & arg0)
+=item  bool operator==()
 
-=item   QDomDocument ownerDocument()
+=item  QDomDocument ownerDocument()
 
-=item   QDomNode parentNode()
+=item  QDomNode parentNode()
 
-=item   QString prefix()
+=item  QString prefix()
 
-=item   QDomNode previousSibling()
+=item  QDomNode previousSibling()
 
-=item   QDomElement previousSiblingElement(const QString & tagName = QString())
+=item  QDomElement previousSiblingElement()
 
-=item   QDomElement previousSiblingElement(const QString & tagName)
+=item  QDomElement previousSiblingElement( = QString())
 
-=item   QDomNode removeChild(const QDomNode & oldChild)
+=item  QDomNode removeChild()
 
-=item   QDomNode replaceChild(const QDomNode & newChild, const QDomNode & oldChild)
+=item  QDomNode replaceChild(, )
 
-=item   void save(QTextStream & arg0, int arg1)
+=item  void save(, )
 
-=item   void save(QTextStream & arg0, int arg1, QDomNode::EncodingPolicy arg2)
+=item  void save(, , )
 
-=item   void setNodeValue(const QString & arg0)
+=item  void setNodeValue()
 
-=item   void setPrefix(const QString & pre)
+=item  void setPrefix()
 
-=item   QDomAttr toAttr()
+=item  QDomAttr toAttr()
 
-=item   QDomCDATASection toCDATASection()
+=item  QDomCDATASection toCDATASection()
 
-=item   QDomCharacterData toCharacterData()
+=item  QDomCharacterData toCharacterData()
 
-=item   QDomComment toComment()
+=item  QDomComment toComment()
 
-=item   QDomDocument toDocument()
+=item  QDomDocument toDocument()
 
-=item   QDomDocumentFragment toDocumentFragment()
+=item  QDomDocumentFragment toDocumentFragment()
 
-=item   QDomDocumentType toDocumentType()
+=item  QDomDocumentType toDocumentType()
 
-=item   QDomElement toElement()
+=item  QDomElement toElement()
 
-=item   QDomEntity toEntity()
+=item  QDomEntity toEntity()
 
-=item   QDomEntityReference toEntityReference()
+=item  QDomEntityReference toEntityReference()
 
-=item   QDomNotation toNotation()
+=item  QDomNotation toNotation()
 
-=item   QDomProcessingInstruction toProcessingInstruction()
+=item  QDomProcessingInstruction toProcessingInstruction()
 
-=item   QDomText toText()
+=item  QDomText toText()
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
+
+=item ElementNode
+
+=item AttributeNode
+
+=item TextNode
+
+=item CDATASectionNode
+
+=item EntityReferenceNode
+
+=item EntityNode
+
+=item ProcessingInstructionNode
+
+=item CommentNode
+
+=item DocumentNode
+
+=item DocumentTypeNode
+
+=item DocumentFragmentNode
+
+=item NotationNode
+
+=item BaseNode
+
+=item CharacterDataNode
+
+=item EncodingFromDocument
+
+=item EncodingFromTextStream
 
 
 =back

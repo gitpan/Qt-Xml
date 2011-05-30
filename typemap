@@ -13,29 +13,30 @@ QXmlDTDHandler *                        		T_PTROBJ_0009
 QXmlEntityResolver *                    		T_PTROBJ_0010
 QDomNode *                              		T_PTROBJ_0011
 QFlag *                                 		T_PTROBJ_0012
-QXmlAttributes *                        		T_PTROBJ_0013
-QDomCharacterData *                     		T_PTROBJ_0014
-QXmlParseException *                    		T_PTROBJ_0015
-QDomDocumentFragment *                  		T_PTROBJ_0016
-QIncompatibleFlag *                     		T_PTROBJ_0017
-QInternal *                             		T_PTROBJ_0018
-QDomAttr *                              		T_PTROBJ_0019
-QDomComment *                           		T_PTROBJ_0020
-QDomElement *                           		T_PTROBJ_0021
-QXmlContentHandler *                    		T_PTROBJ_0022
-QDomNodeList *                          		T_PTROBJ_0023
-QDomNotation *                          		T_PTROBJ_0024
-QDomImplementation *                    		T_PTROBJ_0025
-QXmlDeclHandler *                       		T_PTROBJ_0026
-QXmlDefaultHandler *                    		T_PTROBJ_0027
-QXmlErrorHandler *                      		T_PTROBJ_0028
-QXmlLocator *                           		T_PTROBJ_0029
-QDomNamedNodeMap *                      		T_PTROBJ_0030
-QXmlNamespaceSupport *                  		T_PTROBJ_0031
-QXmlInputSource *                       		T_PTROBJ_0032
-QXmlSimpleReader *                      		T_PTROBJ_0033
-QDomText *                              		T_PTROBJ_0034
-QBool *                                 		T_PTROBJ_0035
+Qt *                                    		T_PTROBJ_0013
+QXmlAttributes *                        		T_PTROBJ_0014
+QDomCharacterData *                     		T_PTROBJ_0015
+QXmlParseException *                    		T_PTROBJ_0016
+QDomDocumentFragment *                  		T_PTROBJ_0017
+QIncompatibleFlag *                     		T_PTROBJ_0018
+QInternal *                             		T_PTROBJ_0019
+QDomAttr *                              		T_PTROBJ_0020
+QDomComment *                           		T_PTROBJ_0021
+QDomElement *                           		T_PTROBJ_0022
+QXmlContentHandler *                    		T_PTROBJ_0023
+QDomNodeList *                          		T_PTROBJ_0024
+QDomNotation *                          		T_PTROBJ_0025
+QDomImplementation *                    		T_PTROBJ_0026
+QXmlDeclHandler *                       		T_PTROBJ_0027
+QXmlDefaultHandler *                    		T_PTROBJ_0028
+QXmlErrorHandler *                      		T_PTROBJ_0029
+QXmlLocator *                           		T_PTROBJ_0030
+QDomNamedNodeMap *                      		T_PTROBJ_0031
+QXmlNamespaceSupport *                  		T_PTROBJ_0032
+QXmlInputSource *                       		T_PTROBJ_0033
+QXmlSimpleReader *                      		T_PTROBJ_0034
+QDomText *                              		T_PTROBJ_0035
+QBool *                                 		T_PTROBJ_0036
 
 ################################################################
 INPUT
@@ -118,138 +119,144 @@ T_PTROBJ_0012
         Perl_croak(aTHX_ \"$var is not of type Qt::Core::QFlag\");
 
 T_PTROBJ_0013
+    if (sv_derived_from($arg, \"Qt\"))
+        $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
+    else
+        Perl_croak(aTHX_ \"$var is not of type Qt\");
+
+T_PTROBJ_0014
     if (sv_derived_from($arg, \"Qt::Xml::QXmlAttributes\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Xml::QXmlAttributes\");
 
-T_PTROBJ_0014
+T_PTROBJ_0015
     if (sv_derived_from($arg, \"Qt::Xml::QDomCharacterData\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Xml::QDomCharacterData\");
 
-T_PTROBJ_0015
+T_PTROBJ_0016
     if (sv_derived_from($arg, \"Qt::Xml::QXmlParseException\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Xml::QXmlParseException\");
 
-T_PTROBJ_0016
+T_PTROBJ_0017
     if (sv_derived_from($arg, \"Qt::Xml::QDomDocumentFragment\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Xml::QDomDocumentFragment\");
 
-T_PTROBJ_0017
+T_PTROBJ_0018
     if (sv_derived_from($arg, \"Qt::Core::QIncompatibleFlag\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Core::QIncompatibleFlag\");
 
-T_PTROBJ_0018
+T_PTROBJ_0019
     if (sv_derived_from($arg, \"Qt::Core::QInternal\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Core::QInternal\");
 
-T_PTROBJ_0019
+T_PTROBJ_0020
     if (sv_derived_from($arg, \"Qt::Xml::QDomAttr\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Xml::QDomAttr\");
 
-T_PTROBJ_0020
+T_PTROBJ_0021
     if (sv_derived_from($arg, \"Qt::Xml::QDomComment\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Xml::QDomComment\");
 
-T_PTROBJ_0021
+T_PTROBJ_0022
     if (sv_derived_from($arg, \"Qt::Xml::QDomElement\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Xml::QDomElement\");
 
-T_PTROBJ_0022
+T_PTROBJ_0023
     if (sv_derived_from($arg, \"Qt::Xml::QXmlContentHandler\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Xml::QXmlContentHandler\");
 
-T_PTROBJ_0023
+T_PTROBJ_0024
     if (sv_derived_from($arg, \"Qt::Xml::QDomNodeList\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Xml::QDomNodeList\");
 
-T_PTROBJ_0024
+T_PTROBJ_0025
     if (sv_derived_from($arg, \"Qt::Xml::QDomNotation\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Xml::QDomNotation\");
 
-T_PTROBJ_0025
+T_PTROBJ_0026
     if (sv_derived_from($arg, \"Qt::Xml::QDomImplementation\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Xml::QDomImplementation\");
 
-T_PTROBJ_0026
+T_PTROBJ_0027
     if (sv_derived_from($arg, \"Qt::Xml::QXmlDeclHandler\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Xml::QXmlDeclHandler\");
 
-T_PTROBJ_0027
+T_PTROBJ_0028
     if (sv_derived_from($arg, \"Qt::Xml::QXmlDefaultHandler\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Xml::QXmlDefaultHandler\");
 
-T_PTROBJ_0028
+T_PTROBJ_0029
     if (sv_derived_from($arg, \"Qt::Xml::QXmlErrorHandler\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Xml::QXmlErrorHandler\");
 
-T_PTROBJ_0029
+T_PTROBJ_0030
     if (sv_derived_from($arg, \"Qt::Xml::QXmlLocator\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Xml::QXmlLocator\");
 
-T_PTROBJ_0030
+T_PTROBJ_0031
     if (sv_derived_from($arg, \"Qt::Xml::QDomNamedNodeMap\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Xml::QDomNamedNodeMap\");
 
-T_PTROBJ_0031
+T_PTROBJ_0032
     if (sv_derived_from($arg, \"Qt::Xml::QXmlNamespaceSupport\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Xml::QXmlNamespaceSupport\");
 
-T_PTROBJ_0032
+T_PTROBJ_0033
     if (sv_derived_from($arg, \"Qt::Xml::QXmlInputSource\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Xml::QXmlInputSource\");
 
-T_PTROBJ_0033
+T_PTROBJ_0034
     if (sv_derived_from($arg, \"Qt::Xml::QXmlSimpleReader\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Xml::QXmlSimpleReader\");
 
-T_PTROBJ_0034
+T_PTROBJ_0035
     if (sv_derived_from($arg, \"Qt::Xml::QDomText\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
         Perl_croak(aTHX_ \"$var is not of type Qt::Xml::QDomText\");
 
-T_PTROBJ_0035
+T_PTROBJ_0036
     if (sv_derived_from($arg, \"Qt::Core::QBool\"))
         $var = reinterpret_cast<$type>(SvIV((SV*)SvRV($arg)));
     else
@@ -298,71 +305,74 @@ T_PTROBJ_0012
     sv_setref_pv($arg, \"Qt::Core::QFlag\", (void *)$var);
 
 T_PTROBJ_0013
-    sv_setref_pv($arg, \"Qt::Xml::QXmlAttributes\", (void *)$var);
+    sv_setref_pv($arg, \"Qt\", (void *)$var);
 
 T_PTROBJ_0014
-    sv_setref_pv($arg, \"Qt::Xml::QDomCharacterData\", (void *)$var);
+    sv_setref_pv($arg, \"Qt::Xml::QXmlAttributes\", (void *)$var);
 
 T_PTROBJ_0015
-    sv_setref_pv($arg, \"Qt::Xml::QXmlParseException\", (void *)$var);
+    sv_setref_pv($arg, \"Qt::Xml::QDomCharacterData\", (void *)$var);
 
 T_PTROBJ_0016
-    sv_setref_pv($arg, \"Qt::Xml::QDomDocumentFragment\", (void *)$var);
+    sv_setref_pv($arg, \"Qt::Xml::QXmlParseException\", (void *)$var);
 
 T_PTROBJ_0017
-    sv_setref_pv($arg, \"Qt::Core::QIncompatibleFlag\", (void *)$var);
+    sv_setref_pv($arg, \"Qt::Xml::QDomDocumentFragment\", (void *)$var);
 
 T_PTROBJ_0018
-    sv_setref_pv($arg, \"Qt::Core::QInternal\", (void *)$var);
+    sv_setref_pv($arg, \"Qt::Core::QIncompatibleFlag\", (void *)$var);
 
 T_PTROBJ_0019
-    sv_setref_pv($arg, \"Qt::Xml::QDomAttr\", (void *)$var);
+    sv_setref_pv($arg, \"Qt::Core::QInternal\", (void *)$var);
 
 T_PTROBJ_0020
-    sv_setref_pv($arg, \"Qt::Xml::QDomComment\", (void *)$var);
+    sv_setref_pv($arg, \"Qt::Xml::QDomAttr\", (void *)$var);
 
 T_PTROBJ_0021
-    sv_setref_pv($arg, \"Qt::Xml::QDomElement\", (void *)$var);
+    sv_setref_pv($arg, \"Qt::Xml::QDomComment\", (void *)$var);
 
 T_PTROBJ_0022
-    sv_setref_pv($arg, \"Qt::Xml::QXmlContentHandler\", (void *)$var);
+    sv_setref_pv($arg, \"Qt::Xml::QDomElement\", (void *)$var);
 
 T_PTROBJ_0023
-    sv_setref_pv($arg, \"Qt::Xml::QDomNodeList\", (void *)$var);
+    sv_setref_pv($arg, \"Qt::Xml::QXmlContentHandler\", (void *)$var);
 
 T_PTROBJ_0024
-    sv_setref_pv($arg, \"Qt::Xml::QDomNotation\", (void *)$var);
+    sv_setref_pv($arg, \"Qt::Xml::QDomNodeList\", (void *)$var);
 
 T_PTROBJ_0025
-    sv_setref_pv($arg, \"Qt::Xml::QDomImplementation\", (void *)$var);
+    sv_setref_pv($arg, \"Qt::Xml::QDomNotation\", (void *)$var);
 
 T_PTROBJ_0026
-    sv_setref_pv($arg, \"Qt::Xml::QXmlDeclHandler\", (void *)$var);
+    sv_setref_pv($arg, \"Qt::Xml::QDomImplementation\", (void *)$var);
 
 T_PTROBJ_0027
-    sv_setref_pv($arg, \"Qt::Xml::QXmlDefaultHandler\", (void *)$var);
+    sv_setref_pv($arg, \"Qt::Xml::QXmlDeclHandler\", (void *)$var);
 
 T_PTROBJ_0028
-    sv_setref_pv($arg, \"Qt::Xml::QXmlErrorHandler\", (void *)$var);
+    sv_setref_pv($arg, \"Qt::Xml::QXmlDefaultHandler\", (void *)$var);
 
 T_PTROBJ_0029
-    sv_setref_pv($arg, \"Qt::Xml::QXmlLocator\", (void *)$var);
+    sv_setref_pv($arg, \"Qt::Xml::QXmlErrorHandler\", (void *)$var);
 
 T_PTROBJ_0030
-    sv_setref_pv($arg, \"Qt::Xml::QDomNamedNodeMap\", (void *)$var);
+    sv_setref_pv($arg, \"Qt::Xml::QXmlLocator\", (void *)$var);
 
 T_PTROBJ_0031
-    sv_setref_pv($arg, \"Qt::Xml::QXmlNamespaceSupport\", (void *)$var);
+    sv_setref_pv($arg, \"Qt::Xml::QDomNamedNodeMap\", (void *)$var);
 
 T_PTROBJ_0032
-    sv_setref_pv($arg, \"Qt::Xml::QXmlInputSource\", (void *)$var);
+    sv_setref_pv($arg, \"Qt::Xml::QXmlNamespaceSupport\", (void *)$var);
 
 T_PTROBJ_0033
-    sv_setref_pv($arg, \"Qt::Xml::QXmlSimpleReader\", (void *)$var);
+    sv_setref_pv($arg, \"Qt::Xml::QXmlInputSource\", (void *)$var);
 
 T_PTROBJ_0034
-    sv_setref_pv($arg, \"Qt::Xml::QDomText\", (void *)$var);
+    sv_setref_pv($arg, \"Qt::Xml::QXmlSimpleReader\", (void *)$var);
 
 T_PTROBJ_0035
+    sv_setref_pv($arg, \"Qt::Xml::QDomText\", (void *)$var);
+
+T_PTROBJ_0036
     sv_setref_pv($arg, \"Qt::Core::QBool\", (void *)$var);
 

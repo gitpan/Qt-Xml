@@ -27,79 +27,87 @@ CODE:
     if(THIS != 0 && !SvREADONLY(SvRV(ST(0))))
         delete THIS;
 
-## bool comment(const QString & ch)
+## bool comment()
 void
 QXmlLexicalHandler::comment(...)
 PREINIT:
 QString * arg00;
 PPCODE:
     if (sv_isa(ST(1), "Qt::Core::QString")) {
-        arg00 = reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(1))));
-    }
-    else
-        Perl_croak(aTHX_ "arg00 is not of type Qt::Core::QString");
+      arg00 = reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(1))));
     bool ret = THIS->comment(*arg00);
     ST(0) = sv_newmortal();
     ST(0) = boolSV(ret);
     XSRETURN(1);
+    }
 
 ## bool endCDATA()
 void
 QXmlLexicalHandler::endCDATA(...)
 PREINIT:
 PPCODE:
+    if (1) {
+      
     bool ret = THIS->endCDATA();
     ST(0) = sv_newmortal();
     ST(0) = boolSV(ret);
     XSRETURN(1);
+    }
 
 ## bool endDTD()
 void
 QXmlLexicalHandler::endDTD(...)
 PREINIT:
 PPCODE:
+    if (1) {
+      
     bool ret = THIS->endDTD();
     ST(0) = sv_newmortal();
     ST(0) = boolSV(ret);
     XSRETURN(1);
+    }
 
-## bool endEntity(const QString & name)
+## bool endEntity()
 void
 QXmlLexicalHandler::endEntity(...)
 PREINIT:
 QString * arg00;
 PPCODE:
     if (sv_isa(ST(1), "Qt::Core::QString")) {
-        arg00 = reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(1))));
-    }
-    else
-        Perl_croak(aTHX_ "arg00 is not of type Qt::Core::QString");
+      arg00 = reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(1))));
     bool ret = THIS->endEntity(*arg00);
     ST(0) = sv_newmortal();
     ST(0) = boolSV(ret);
     XSRETURN(1);
+    }
 
 ## QString errorString()
 void
 QXmlLexicalHandler::errorString(...)
 PREINIT:
 PPCODE:
+    if (1) {
+      
     QString ret = THIS->errorString();
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::Core::QString", (void *)new QString(ret));
     XSRETURN(1);
+    }
 
 ## bool startCDATA()
 void
 QXmlLexicalHandler::startCDATA(...)
 PREINIT:
 PPCODE:
+    if (1) {
+      
     bool ret = THIS->startCDATA();
     ST(0) = sv_newmortal();
     ST(0) = boolSV(ret);
     XSRETURN(1);
+    }
 
-## bool startDTD(const QString & name, const QString & publicId, const QString & systemId)
+## bool startDTD(, , )
 void
 QXmlLexicalHandler::startDTD(...)
 PREINIT:
@@ -107,38 +115,26 @@ QString * arg00;
 QString * arg01;
 QString * arg02;
 PPCODE:
-    if (sv_isa(ST(1), "Qt::Core::QString")) {
-        arg00 = reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(1))));
-    }
-    else
-        Perl_croak(aTHX_ "arg00 is not of type Qt::Core::QString");
-    if (sv_isa(ST(2), "Qt::Core::QString")) {
-        arg01 = reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(2))));
-    }
-    else
-        Perl_croak(aTHX_ "arg01 is not of type Qt::Core::QString");
-    if (sv_isa(ST(3), "Qt::Core::QString")) {
-        arg02 = reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(3))));
-    }
-    else
-        Perl_croak(aTHX_ "arg02 is not of type Qt::Core::QString");
+    if (sv_isa(ST(1), "Qt::Core::QString") && sv_isa(ST(2), "Qt::Core::QString") && sv_isa(ST(3), "Qt::Core::QString")) {
+      arg00 = reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(1))));
+      arg01 = reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(2))));
+      arg02 = reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(3))));
     bool ret = THIS->startDTD(*arg00, *arg01, *arg02);
     ST(0) = sv_newmortal();
     ST(0) = boolSV(ret);
     XSRETURN(1);
+    }
 
-## bool startEntity(const QString & name)
+## bool startEntity()
 void
 QXmlLexicalHandler::startEntity(...)
 PREINIT:
 QString * arg00;
 PPCODE:
     if (sv_isa(ST(1), "Qt::Core::QString")) {
-        arg00 = reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(1))));
-    }
-    else
-        Perl_croak(aTHX_ "arg00 is not of type Qt::Core::QString");
+      arg00 = reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(1))));
     bool ret = THIS->startEntity(*arg00);
     ST(0) = sv_newmortal();
     ST(0) = boolSV(ret);
     XSRETURN(1);
+    }

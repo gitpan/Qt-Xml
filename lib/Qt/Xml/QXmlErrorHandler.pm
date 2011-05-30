@@ -7,11 +7,10 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
+our $VERSION = '0.01_02';
 
 
 # FIXME: operator overload
-
 
 
 1;
@@ -24,15 +23,22 @@ Qt::Xml::QXmlErrorHandler
 
 =over
 
-=item    ~QXmlErrorHandler()
+=item   ~QXmlErrorHandler()
 
-=item   bool error(const QXmlParseException & exception)
+=item  bool error()
 
-=item   QString errorString()
+=item  QString errorString()
 
-=item   bool fatalError(const QXmlParseException & exception)
+=item  bool fatalError()
 
-=item   bool warning(const QXmlParseException & exception)
+=item  bool warning()
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
 
 
 =back

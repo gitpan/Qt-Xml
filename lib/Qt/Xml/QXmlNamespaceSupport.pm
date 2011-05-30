@@ -7,11 +7,10 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
+our $VERSION = '0.01_02';
 
 
 # FIXME: operator overload
-
 
 
 1;
@@ -24,29 +23,36 @@ Qt::Xml::QXmlNamespaceSupport
 
 =over
 
-=item    QXmlNamespaceSupport()
+=item   QXmlNamespaceSupport()
 
-=item    ~QXmlNamespaceSupport()
+=item   ~QXmlNamespaceSupport()
 
-=item   void popContext()
+=item  void popContext()
 
-=item   QString prefix(const QString & arg0)
+=item  QString prefix()
 
-=item   QStringList prefixes()
+=item  QStringList prefixes()
 
-=item   QStringList prefixes(const QString & arg0)
+=item  QStringList prefixes()
 
-=item   void processName(const QString & arg0, bool arg1, QString & arg2, QString & arg3)
+=item  void processName(, , , )
 
-=item   void pushContext()
+=item  void pushContext()
 
-=item   void reset()
+=item  void reset()
 
-=item   void setPrefix(const QString & arg0, const QString & arg1)
+=item  void setPrefix(, )
 
-=item   void splitName(const QString & arg0, QString & arg1, QString & arg2)
+=item  void splitName(, , )
 
-=item   QString uri(const QString & arg0)
+=item  QString uri()
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
 
 
 =back

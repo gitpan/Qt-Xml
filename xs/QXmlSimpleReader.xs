@@ -24,7 +24,10 @@ QXmlSimpleReader::new(...)
 PREINIT:
 QXmlSimpleReader *ret;
 PPCODE:
+    if (1) {
+      
     Perl_croak(aTHX_ "Trying to create abstract class object");
+    }
 
 ##  ~QXmlSimpleReader()
 void
@@ -38,144 +41,156 @@ void
 QXmlSimpleReader::DTDHandler(...)
 PREINIT:
 PPCODE:
+    if (1) {
+      
     QXmlDTDHandler * ret = THIS->DTDHandler();
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::Xml::QXmlDTDHandler", (void *)ret);
     XSRETURN(1);
+    }
 
 ## QXmlContentHandler * contentHandler()
 void
 QXmlSimpleReader::contentHandler(...)
 PREINIT:
 PPCODE:
+    if (1) {
+      
     QXmlContentHandler * ret = THIS->contentHandler();
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::Xml::QXmlContentHandler", (void *)ret);
     XSRETURN(1);
+    }
 
 ## QXmlDeclHandler * declHandler()
 void
 QXmlSimpleReader::declHandler(...)
 PREINIT:
 PPCODE:
+    if (1) {
+      
     QXmlDeclHandler * ret = THIS->declHandler();
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::Xml::QXmlDeclHandler", (void *)ret);
     XSRETURN(1);
+    }
 
 ## QXmlEntityResolver * entityResolver()
 void
 QXmlSimpleReader::entityResolver(...)
 PREINIT:
 PPCODE:
+    if (1) {
+      
     QXmlEntityResolver * ret = THIS->entityResolver();
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::Xml::QXmlEntityResolver", (void *)ret);
     XSRETURN(1);
+    }
 
 ## QXmlErrorHandler * errorHandler()
 void
 QXmlSimpleReader::errorHandler(...)
 PREINIT:
 PPCODE:
+    if (1) {
+      
     QXmlErrorHandler * ret = THIS->errorHandler();
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::Xml::QXmlErrorHandler", (void *)ret);
     XSRETURN(1);
+    }
 
-## bool feature(const QString & name, bool * ok = 0)
-## bool feature(const QString & name, bool * ok)
+## bool feature(, )
+## bool feature(,  = 0)
 void
 QXmlSimpleReader::feature(...)
 PREINIT:
 QString * arg00;
-bool * arg01 = 0;
+bool * arg01;
 QString * arg10;
-bool * arg11;
+bool * arg11 = 0;
 PPCODE:
     switch(items) {
-    case 2:
+      case 2:
       {
         if (sv_isa(ST(1), "Qt::Core::QString")) {
-        arg00 = reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(1))));
-    }
-    else
-        Perl_croak(aTHX_ "arg00 is not of type Qt::Core::QString");
-    bool ret = THIS->feature(*arg00, arg01);
-    ST(0) = sv_newmortal();
-    ST(0) = boolSV(ret);
-    XSRETURN(1);
-        break;
-      }
-    case 3:
-      {
-        if (sv_isa(ST(1), "Qt::Core::QString")) {
-        arg10 = reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(1))));
-    }
-    else
-        Perl_croak(aTHX_ "arg10 is not of type Qt::Core::QString");
-    {
-        bool tmp = SvTRUE(ST(2));
-        arg11 = &tmp;
-    }
+      arg10 = reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(1))));
     bool ret = THIS->feature(*arg10, arg11);
     ST(0) = sv_newmortal();
     ST(0) = boolSV(ret);
     XSRETURN(1);
+    }
+	else
+            Perl_croak(aTHX_ "wrong number/type of arguments passed in");
         break;
       }
-    default:
+      case 3:
       {
+        if (sv_isa(ST(1), "Qt::Core::QString") && 1) {
+      arg00 = reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(1))));
+      {
+        bool tmp = SvTRUE(ST(2));
+        arg01 = &tmp;
+    }
+    bool ret = THIS->feature(*arg00, arg01);
+    ST(0) = sv_newmortal();
+    ST(0) = boolSV(ret);
+    XSRETURN(1);
+    }
+	else
+            Perl_croak(aTHX_ "wrong number/type of arguments passed in");
+        break;
+      }
+      default:
         Perl_croak(aTHX_ "wrong number/type of arguments passed in");
         break;
-      }
     }
 
-## bool hasFeature(const QString & name)
+## bool hasFeature()
 void
 QXmlSimpleReader::hasFeature(...)
 PREINIT:
 QString * arg00;
 PPCODE:
     if (sv_isa(ST(1), "Qt::Core::QString")) {
-        arg00 = reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(1))));
-    }
-    else
-        Perl_croak(aTHX_ "arg00 is not of type Qt::Core::QString");
+      arg00 = reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(1))));
     bool ret = THIS->hasFeature(*arg00);
     ST(0) = sv_newmortal();
     ST(0) = boolSV(ret);
     XSRETURN(1);
+    }
 
-## bool hasProperty(const QString & name)
+## bool hasProperty()
 void
 QXmlSimpleReader::hasProperty(...)
 PREINIT:
 QString * arg00;
 PPCODE:
     if (sv_isa(ST(1), "Qt::Core::QString")) {
-        arg00 = reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(1))));
-    }
-    else
-        Perl_croak(aTHX_ "arg00 is not of type Qt::Core::QString");
+      arg00 = reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(1))));
     bool ret = THIS->hasProperty(*arg00);
     ST(0) = sv_newmortal();
     ST(0) = boolSV(ret);
     XSRETURN(1);
+    }
 
 ## QXmlLexicalHandler * lexicalHandler()
 void
 QXmlSimpleReader::lexicalHandler(...)
 PREINIT:
 PPCODE:
+    if (1) {
+      
     QXmlLexicalHandler * ret = THIS->lexicalHandler();
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::Xml::QXmlLexicalHandler", (void *)ret);
     XSRETURN(1);
+    }
 
-## bool parse(const QXmlInputSource & input)
-## bool parse(const QXmlInputSource * input)
-## bool parse(const QXmlInputSource * input, bool incremental)
+## bool parse()
+## bool parse()
+## bool parse(, )
 void
 QXmlSimpleReader::parse(...)
 PREINIT:
@@ -185,38 +200,57 @@ const QXmlInputSource * arg20;
 bool arg21;
 PPCODE:
     switch(items) {
-    case 2:
+      case 2:
       {
         if (sv_isa(ST(1), "Qt::Xml::QXmlInputSource")) {
-        arg00 = reinterpret_cast<QXmlInputSource *>(SvIV((SV*)SvRV(ST(1))));
-    }
-    else
-        Perl_croak(aTHX_ "arg00 is not of type Qt::Xml::QXmlInputSource");
+      arg00 = reinterpret_cast<QXmlInputSource *>(SvIV((SV*)SvRV(ST(1))));
     bool ret = THIS->parse(*arg00);
     ST(0) = sv_newmortal();
     ST(0) = boolSV(ret);
     XSRETURN(1);
+    }
+        else if ((sv_derived_from(ST(1), "Qt::Xml::QXmlInputSource") || ST(1) == &PL_sv_undef)) {
+      if (sv_derived_from(ST(1), "Qt::Xml::QXmlInputSource")) {
+        arg10 = reinterpret_cast<QXmlInputSource *>(SvIV((SV*)SvRV(ST(1))));
+    }
+    else if (ST(1) == &PL_sv_undef) {
+        arg10 = 0;
+    }
+    else
+        Perl_croak(aTHX_ "arg10 is not of type Qt::Xml::QXmlInputSource");
+    bool ret = THIS->parse(arg10);
+    ST(0) = sv_newmortal();
+    ST(0) = boolSV(ret);
+    XSRETURN(1);
+    }
+	else
+            Perl_croak(aTHX_ "wrong number/type of arguments passed in");
         break;
       }
-    case 3:
+      case 3:
       {
-        if (sv_derived_from(ST(1), "Qt::Xml::QXmlInputSource")) {
+        if ((sv_derived_from(ST(1), "Qt::Xml::QXmlInputSource") || ST(1) == &PL_sv_undef) && 1) {
+      if (sv_derived_from(ST(1), "Qt::Xml::QXmlInputSource")) {
         arg20 = reinterpret_cast<QXmlInputSource *>(SvIV((SV*)SvRV(ST(1))));
+    }
+    else if (ST(1) == &PL_sv_undef) {
+        arg20 = 0;
     }
     else
         Perl_croak(aTHX_ "arg20 is not of type Qt::Xml::QXmlInputSource");
-    arg21 = (bool)SvTRUE(ST(2));
+      arg21 = (bool)SvTRUE(ST(2));
     bool ret = THIS->parse(arg20, arg21);
     ST(0) = sv_newmortal();
     ST(0) = boolSV(ret);
     XSRETURN(1);
+    }
+	else
+            Perl_croak(aTHX_ "wrong number/type of arguments passed in");
         break;
       }
-    default:
-      {
+      default:
         Perl_croak(aTHX_ "wrong number/type of arguments passed in");
         break;
-      }
     }
 
 ## bool parseContinue()
@@ -224,171 +258,198 @@ void
 QXmlSimpleReader::parseContinue(...)
 PREINIT:
 PPCODE:
+    if (1) {
+      
     bool ret = THIS->parseContinue();
     ST(0) = sv_newmortal();
     ST(0) = boolSV(ret);
     XSRETURN(1);
+    }
 
-## void * property(const QString & name, bool * ok = 0)
-## void * property(const QString & name, bool * ok)
+## void * property(, )
+## void * property(,  = 0)
 void
 QXmlSimpleReader::property(...)
 PREINIT:
 QString * arg00;
-bool * arg01 = 0;
+bool * arg01;
 QString * arg10;
-bool * arg11;
+bool * arg11 = 0;
 PPCODE:
     switch(items) {
-    case 2:
+      case 2:
       {
         if (sv_isa(ST(1), "Qt::Core::QString")) {
-        arg00 = reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(1))));
-    }
-    else
-        Perl_croak(aTHX_ "arg00 is not of type Qt::Core::QString");
-    void * ret = THIS->property(*arg00, arg01);
-    ST(0) = sv_newmortal();
-    sv_setiv(ST(0), PTR2IV(ret));
-    XSRETURN(1);
-        break;
-      }
-    case 3:
-      {
-        if (sv_isa(ST(1), "Qt::Core::QString")) {
-        arg10 = reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(1))));
-    }
-    else
-        Perl_croak(aTHX_ "arg10 is not of type Qt::Core::QString");
-    {
-        bool tmp = SvTRUE(ST(2));
-        arg11 = &tmp;
-    }
+      arg10 = reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(1))));
     void * ret = THIS->property(*arg10, arg11);
     ST(0) = sv_newmortal();
     sv_setiv(ST(0), PTR2IV(ret));
     XSRETURN(1);
+    }
+	else
+            Perl_croak(aTHX_ "wrong number/type of arguments passed in");
         break;
       }
-    default:
+      case 3:
       {
+        if (sv_isa(ST(1), "Qt::Core::QString") && 1) {
+      arg00 = reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(1))));
+      {
+        bool tmp = SvTRUE(ST(2));
+        arg01 = &tmp;
+    }
+    void * ret = THIS->property(*arg00, arg01);
+    ST(0) = sv_newmortal();
+    sv_setiv(ST(0), PTR2IV(ret));
+    XSRETURN(1);
+    }
+	else
+            Perl_croak(aTHX_ "wrong number/type of arguments passed in");
+        break;
+      }
+      default:
         Perl_croak(aTHX_ "wrong number/type of arguments passed in");
         break;
-      }
     }
 
-## void setContentHandler(QXmlContentHandler * handler)
+## void setContentHandler()
 void
 QXmlSimpleReader::setContentHandler(...)
 PREINIT:
 QXmlContentHandler * arg00;
 PPCODE:
-    if (sv_derived_from(ST(1), "Qt::Xml::QXmlContentHandler")) {
+    if ((sv_derived_from(ST(1), "Qt::Xml::QXmlContentHandler") || ST(1) == &PL_sv_undef)) {
+      if (sv_derived_from(ST(1), "Qt::Xml::QXmlContentHandler")) {
         arg00 = reinterpret_cast<QXmlContentHandler *>(SvIV((SV*)SvRV(ST(1))));
+    }
+    else if (ST(1) == &PL_sv_undef) {
+        arg00 = 0;
     }
     else
         Perl_croak(aTHX_ "arg00 is not of type Qt::Xml::QXmlContentHandler");
     (void)THIS->setContentHandler(arg00);
     XSRETURN(0);
+    }
 
-## void setDTDHandler(QXmlDTDHandler * handler)
+## void setDTDHandler()
 void
 QXmlSimpleReader::setDTDHandler(...)
 PREINIT:
 QXmlDTDHandler * arg00;
 PPCODE:
-    if (sv_derived_from(ST(1), "Qt::Xml::QXmlDTDHandler")) {
+    if ((sv_derived_from(ST(1), "Qt::Xml::QXmlDTDHandler") || ST(1) == &PL_sv_undef)) {
+      if (sv_derived_from(ST(1), "Qt::Xml::QXmlDTDHandler")) {
         arg00 = reinterpret_cast<QXmlDTDHandler *>(SvIV((SV*)SvRV(ST(1))));
+    }
+    else if (ST(1) == &PL_sv_undef) {
+        arg00 = 0;
     }
     else
         Perl_croak(aTHX_ "arg00 is not of type Qt::Xml::QXmlDTDHandler");
     (void)THIS->setDTDHandler(arg00);
     XSRETURN(0);
+    }
 
-## void setDeclHandler(QXmlDeclHandler * handler)
+## void setDeclHandler()
 void
 QXmlSimpleReader::setDeclHandler(...)
 PREINIT:
 QXmlDeclHandler * arg00;
 PPCODE:
-    if (sv_derived_from(ST(1), "Qt::Xml::QXmlDeclHandler")) {
+    if ((sv_derived_from(ST(1), "Qt::Xml::QXmlDeclHandler") || ST(1) == &PL_sv_undef)) {
+      if (sv_derived_from(ST(1), "Qt::Xml::QXmlDeclHandler")) {
         arg00 = reinterpret_cast<QXmlDeclHandler *>(SvIV((SV*)SvRV(ST(1))));
+    }
+    else if (ST(1) == &PL_sv_undef) {
+        arg00 = 0;
     }
     else
         Perl_croak(aTHX_ "arg00 is not of type Qt::Xml::QXmlDeclHandler");
     (void)THIS->setDeclHandler(arg00);
     XSRETURN(0);
+    }
 
-## void setEntityResolver(QXmlEntityResolver * handler)
+## void setEntityResolver()
 void
 QXmlSimpleReader::setEntityResolver(...)
 PREINIT:
 QXmlEntityResolver * arg00;
 PPCODE:
-    if (sv_derived_from(ST(1), "Qt::Xml::QXmlEntityResolver")) {
+    if ((sv_derived_from(ST(1), "Qt::Xml::QXmlEntityResolver") || ST(1) == &PL_sv_undef)) {
+      if (sv_derived_from(ST(1), "Qt::Xml::QXmlEntityResolver")) {
         arg00 = reinterpret_cast<QXmlEntityResolver *>(SvIV((SV*)SvRV(ST(1))));
+    }
+    else if (ST(1) == &PL_sv_undef) {
+        arg00 = 0;
     }
     else
         Perl_croak(aTHX_ "arg00 is not of type Qt::Xml::QXmlEntityResolver");
     (void)THIS->setEntityResolver(arg00);
     XSRETURN(0);
+    }
 
-## void setErrorHandler(QXmlErrorHandler * handler)
+## void setErrorHandler()
 void
 QXmlSimpleReader::setErrorHandler(...)
 PREINIT:
 QXmlErrorHandler * arg00;
 PPCODE:
-    if (sv_derived_from(ST(1), "Qt::Xml::QXmlErrorHandler")) {
+    if ((sv_derived_from(ST(1), "Qt::Xml::QXmlErrorHandler") || ST(1) == &PL_sv_undef)) {
+      if (sv_derived_from(ST(1), "Qt::Xml::QXmlErrorHandler")) {
         arg00 = reinterpret_cast<QXmlErrorHandler *>(SvIV((SV*)SvRV(ST(1))));
+    }
+    else if (ST(1) == &PL_sv_undef) {
+        arg00 = 0;
     }
     else
         Perl_croak(aTHX_ "arg00 is not of type Qt::Xml::QXmlErrorHandler");
     (void)THIS->setErrorHandler(arg00);
     XSRETURN(0);
+    }
 
-## void setFeature(const QString & name, bool value)
+## void setFeature(, )
 void
 QXmlSimpleReader::setFeature(...)
 PREINIT:
 QString * arg00;
 bool arg01;
 PPCODE:
-    if (sv_isa(ST(1), "Qt::Core::QString")) {
-        arg00 = reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(1))));
-    }
-    else
-        Perl_croak(aTHX_ "arg00 is not of type Qt::Core::QString");
-    arg01 = (bool)SvTRUE(ST(2));
+    if (sv_isa(ST(1), "Qt::Core::QString") && 1) {
+      arg00 = reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(1))));
+      arg01 = (bool)SvTRUE(ST(2));
     (void)THIS->setFeature(*arg00, arg01);
     XSRETURN(0);
+    }
 
-## void setLexicalHandler(QXmlLexicalHandler * handler)
+## void setLexicalHandler()
 void
 QXmlSimpleReader::setLexicalHandler(...)
 PREINIT:
 QXmlLexicalHandler * arg00;
 PPCODE:
-    if (sv_derived_from(ST(1), "Qt::Xml::QXmlLexicalHandler")) {
+    if ((sv_derived_from(ST(1), "Qt::Xml::QXmlLexicalHandler") || ST(1) == &PL_sv_undef)) {
+      if (sv_derived_from(ST(1), "Qt::Xml::QXmlLexicalHandler")) {
         arg00 = reinterpret_cast<QXmlLexicalHandler *>(SvIV((SV*)SvRV(ST(1))));
+    }
+    else if (ST(1) == &PL_sv_undef) {
+        arg00 = 0;
     }
     else
         Perl_croak(aTHX_ "arg00 is not of type Qt::Xml::QXmlLexicalHandler");
     (void)THIS->setLexicalHandler(arg00);
     XSRETURN(0);
+    }
 
-## void setProperty(const QString & name, void * value)
+## void setProperty(, )
 void
 QXmlSimpleReader::setProperty(...)
 PREINIT:
 QString * arg00;
 void * arg01;
 PPCODE:
-    if (sv_isa(ST(1), "Qt::Core::QString")) {
-        arg00 = reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(1))));
-    }
-    else
-        Perl_croak(aTHX_ "arg00 is not of type Qt::Core::QString");
-    arg01 = reinterpret_cast<void *>(SvIV(ST(2)));
+    if (sv_isa(ST(1), "Qt::Core::QString") && SvIOK(ST(2))) {
+      arg00 = reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(1))));
+      arg01 = reinterpret_cast<void *>(SvIV(ST(2)));
     (void)THIS->setProperty(*arg00, arg01);
     XSRETURN(0);
+    }

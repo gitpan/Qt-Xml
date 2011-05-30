@@ -24,7 +24,10 @@ QXmlLocator::new(...)
 PREINIT:
 QXmlLocator *ret;
 PPCODE:
+    if (1) {
+      
     Perl_croak(aTHX_ "Trying to create abstract class object");
+    }
 
 ##  ~QXmlLocator()
 void
@@ -38,17 +41,23 @@ void
 QXmlLocator::columnNumber(...)
 PREINIT:
 PPCODE:
+    if (1) {
+      
     int ret = THIS->columnNumber();
     ST(0) = sv_newmortal();
     sv_setiv(ST(0), (IV)ret);
     XSRETURN(1);
+    }
 
 ## int lineNumber()
 void
 QXmlLocator::lineNumber(...)
 PREINIT:
 PPCODE:
+    if (1) {
+      
     int ret = THIS->lineNumber();
     ST(0) = sv_newmortal();
     sv_setiv(ST(0), (IV)ret);
     XSRETURN(1);
+    }

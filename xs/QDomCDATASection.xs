@@ -19,7 +19,7 @@ PROTOTYPES: DISABLE
 ################################################################
 
 ##  QDomCDATASection()
-##  QDomCDATASection(const QDomCDATASection & x)
+##  QDomCDATASection()
   void
 QDomCDATASection::new(...)
 PREINIT:
@@ -27,32 +27,33 @@ QDomCDATASection *ret;
 QDomCDATASection * arg10;
 PPCODE:
     switch(items) {
-    case 1:
+      case 1:
       {
-        ret = new QDomCDATASection();
+        if (1) {
+      
+    ret = new QDomCDATASection();
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::Xml::QDomCDATASection", (void *)ret);
     XSRETURN(1);
+    }
         break;
       }
-    case 2:
+      case 2:
       {
         if (sv_isa(ST(1), "Qt::Xml::QDomCDATASection")) {
-        arg10 = reinterpret_cast<QDomCDATASection *>(SvIV((SV*)SvRV(ST(1))));
-    }
-    else
-        Perl_croak(aTHX_ "arg10 is not of type Qt::Xml::QDomCDATASection");
+      arg10 = reinterpret_cast<QDomCDATASection *>(SvIV((SV*)SvRV(ST(1))));
     ret = new QDomCDATASection(*arg10);
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::Xml::QDomCDATASection", (void *)ret);
     XSRETURN(1);
+    }
+	else
+            Perl_croak(aTHX_ "wrong number/type of arguments passed in");
         break;
       }
-    default:
-      {
+      default:
         Perl_croak(aTHX_ "wrong number/type of arguments passed in");
         break;
-      }
     }
 
 
@@ -62,23 +63,24 @@ void
 QDomCDATASection::nodeType(...)
 PREINIT:
 PPCODE:
+    if (1) {
+      
     QDomNode::NodeType ret = THIS->nodeType();
     ST(0) = sv_newmortal();
     sv_setiv(ST(0), (IV)ret);
     XSRETURN(1);
+    }
 
-## QDomCDATASection & operator=(const QDomCDATASection & arg0)
+## QDomCDATASection & operator=()
 void
 QDomCDATASection::operator_assign(...)
 PREINIT:
 QDomCDATASection * arg00;
 PPCODE:
     if (sv_isa(ST(1), "Qt::Xml::QDomCDATASection")) {
-        arg00 = reinterpret_cast<QDomCDATASection *>(SvIV((SV*)SvRV(ST(1))));
-    }
-    else
-        Perl_croak(aTHX_ "arg00 is not of type Qt::Xml::QDomCDATASection");
+      arg00 = reinterpret_cast<QDomCDATASection *>(SvIV((SV*)SvRV(ST(1))));
     QDomCDATASection * ret = &THIS->operator=(*arg00);
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::Xml::QDomCDATASection", (void *)ret);
     XSRETURN(1);
+    }

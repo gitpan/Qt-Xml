@@ -32,12 +32,15 @@ void
 QXmlDTDHandler::errorString(...)
 PREINIT:
 PPCODE:
+    if (1) {
+      
     QString ret = THIS->errorString();
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::Core::QString", (void *)new QString(ret));
     XSRETURN(1);
+    }
 
-## bool notationDecl(const QString & name, const QString & publicId, const QString & systemId)
+## bool notationDecl(, , )
 void
 QXmlDTDHandler::notationDecl(...)
 PREINIT:
@@ -45,27 +48,17 @@ QString * arg00;
 QString * arg01;
 QString * arg02;
 PPCODE:
-    if (sv_isa(ST(1), "Qt::Core::QString")) {
-        arg00 = reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(1))));
-    }
-    else
-        Perl_croak(aTHX_ "arg00 is not of type Qt::Core::QString");
-    if (sv_isa(ST(2), "Qt::Core::QString")) {
-        arg01 = reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(2))));
-    }
-    else
-        Perl_croak(aTHX_ "arg01 is not of type Qt::Core::QString");
-    if (sv_isa(ST(3), "Qt::Core::QString")) {
-        arg02 = reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(3))));
-    }
-    else
-        Perl_croak(aTHX_ "arg02 is not of type Qt::Core::QString");
+    if (sv_isa(ST(1), "Qt::Core::QString") && sv_isa(ST(2), "Qt::Core::QString") && sv_isa(ST(3), "Qt::Core::QString")) {
+      arg00 = reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(1))));
+      arg01 = reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(2))));
+      arg02 = reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(3))));
     bool ret = THIS->notationDecl(*arg00, *arg01, *arg02);
     ST(0) = sv_newmortal();
     ST(0) = boolSV(ret);
     XSRETURN(1);
+    }
 
-## bool unparsedEntityDecl(const QString & name, const QString & publicId, const QString & systemId, const QString & notationName)
+## bool unparsedEntityDecl(, , , )
 void
 QXmlDTDHandler::unparsedEntityDecl(...)
 PREINIT:
@@ -74,27 +67,13 @@ QString * arg01;
 QString * arg02;
 QString * arg03;
 PPCODE:
-    if (sv_isa(ST(1), "Qt::Core::QString")) {
-        arg00 = reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(1))));
-    }
-    else
-        Perl_croak(aTHX_ "arg00 is not of type Qt::Core::QString");
-    if (sv_isa(ST(2), "Qt::Core::QString")) {
-        arg01 = reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(2))));
-    }
-    else
-        Perl_croak(aTHX_ "arg01 is not of type Qt::Core::QString");
-    if (sv_isa(ST(3), "Qt::Core::QString")) {
-        arg02 = reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(3))));
-    }
-    else
-        Perl_croak(aTHX_ "arg02 is not of type Qt::Core::QString");
-    if (sv_isa(ST(4), "Qt::Core::QString")) {
-        arg03 = reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(4))));
-    }
-    else
-        Perl_croak(aTHX_ "arg03 is not of type Qt::Core::QString");
+    if (sv_isa(ST(1), "Qt::Core::QString") && sv_isa(ST(2), "Qt::Core::QString") && sv_isa(ST(3), "Qt::Core::QString") && sv_isa(ST(4), "Qt::Core::QString")) {
+      arg00 = reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(1))));
+      arg01 = reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(2))));
+      arg02 = reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(3))));
+      arg03 = reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(4))));
     bool ret = THIS->unparsedEntityDecl(*arg00, *arg01, *arg02, *arg03);
     ST(0) = sv_newmortal();
     ST(0) = boolSV(ret);
     XSRETURN(1);
+    }

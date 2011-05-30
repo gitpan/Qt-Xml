@@ -7,12 +7,11 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
-our $ISA     = qw/QXmlContentHandler QXmlErrorHandler QXmlDTDHandler QXmlEntityResolver QXmlLexicalHandler QXmlDeclHandler/;
+our $VERSION = '0.01_02';
+our $ISA     = qw/Qt::Xml::QXmlContentHandler Qt::Xml::QXmlErrorHandler Qt::Xml::QXmlDTDHandler Qt::Xml::QXmlEntityResolver Qt::Xml::QXmlLexicalHandler Qt::Xml::QXmlDeclHandler/;
 
 
 # FIXME: operator overload
-
 
 
 1;
@@ -25,65 +24,72 @@ Qt::Xml::QXmlDefaultHandler
 
 =over
 
-=item    QXmlDefaultHandler()
+=item   QXmlDefaultHandler()
 
-=item    ~QXmlDefaultHandler()
+=item   ~QXmlDefaultHandler()
 
-=item   bool attributeDecl(const QString & eName, const QString & aName, const QString & type, const QString & valueDefault, const QString & value)
+=item  bool attributeDecl(, , , , )
 
-=item   bool characters(const QString & ch)
+=item  bool characters()
 
-=item   bool comment(const QString & ch)
+=item  bool comment()
 
-=item   bool endCDATA()
+=item  bool endCDATA()
 
-=item   bool endDTD()
+=item  bool endDTD()
 
-=item   bool endDocument()
+=item  bool endDocument()
 
-=item   bool endElement(const QString & namespaceURI, const QString & localName, const QString & qName)
+=item  bool endElement(, , )
 
-=item   bool endEntity(const QString & name)
+=item  bool endEntity()
 
-=item   bool endPrefixMapping(const QString & prefix)
+=item  bool endPrefixMapping()
 
-=item   bool error(const QXmlParseException & exception)
+=item  bool error()
 
-=item   QString errorString()
+=item  QString errorString()
 
-=item   bool externalEntityDecl(const QString & name, const QString & publicId, const QString & systemId)
+=item  bool externalEntityDecl(, , )
 
-=item   bool fatalError(const QXmlParseException & exception)
+=item  bool fatalError()
 
-=item   bool ignorableWhitespace(const QString & ch)
+=item  bool ignorableWhitespace()
 
-=item   bool internalEntityDecl(const QString & name, const QString & value)
+=item  bool internalEntityDecl(, )
 
-=item   bool notationDecl(const QString & name, const QString & publicId, const QString & systemId)
+=item  bool notationDecl(, , )
 
-=item   bool processingInstruction(const QString & target, const QString & data)
+=item  bool processingInstruction(, )
 
-=item   bool resolveEntity(const QString & publicId, const QString & systemId, QXmlInputSource *& ret)
+=item  bool resolveEntity(, , )
 
-=item   void setDocumentLocator(QXmlLocator * locator)
+=item  void setDocumentLocator()
 
-=item   bool skippedEntity(const QString & name)
+=item  bool skippedEntity()
 
-=item   bool startCDATA()
+=item  bool startCDATA()
 
-=item   bool startDTD(const QString & name, const QString & publicId, const QString & systemId)
+=item  bool startDTD(, , )
 
-=item   bool startDocument()
+=item  bool startDocument()
 
-=item   bool startElement(const QString & namespaceURI, const QString & localName, const QString & qName, const QXmlAttributes & atts)
+=item  bool startElement(, , , )
 
-=item   bool startEntity(const QString & name)
+=item  bool startEntity()
 
-=item   bool startPrefixMapping(const QString & prefix, const QString & uri)
+=item  bool startPrefixMapping(, )
 
-=item   bool unparsedEntityDecl(const QString & name, const QString & publicId, const QString & systemId, const QString & notationName)
+=item  bool unparsedEntityDecl(, , , )
 
-=item   bool warning(const QXmlParseException & exception)
+=item  bool warning()
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
 
 
 =back

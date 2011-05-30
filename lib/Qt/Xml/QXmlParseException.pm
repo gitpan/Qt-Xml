@@ -7,11 +7,10 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
+our $VERSION = '0.01_02';
 
 
 # FIXME: operator overload
-
 
 
 1;
@@ -24,39 +23,38 @@ Qt::Xml::QXmlParseException
 
 =over
 
-=item    QXmlParseException(const QXmlParseException & other)
+=item   QXmlParseException()
 
-=item    QXmlParseException(const QString & name, int c, int l, const QString & p, const QString & s = QString())
+=item   QXmlParseException(, , , , )
 
-=item    QXmlParseException(const QString & name, int c, int l, const QString & p, const QString & s)
+=item   QXmlParseException(, , , ,  = QString())
 
-=item    QXmlParseException(const QString & name, int c, int l, const QString & p = QString(), const QString & s = QString())
+=item   QXmlParseException(, , ,  = QString(),  = QString())
 
-=item    QXmlParseException(const QString & name, int c, int l, const QString & p, const QString & s = QString())
+=item   QXmlParseException(, ,  = -1,  = QString(),  = QString())
 
-=item    QXmlParseException(const QString & name, int c, int l = -1, const QString & p = QString(), const QString & s = QString())
+=item   QXmlParseException(,  = -1,  = -1,  = QString(),  = QString())
 
-=item    QXmlParseException(const QString & name, int c, int l, const QString & p = QString(), const QString & s = QString())
+=item   QXmlParseException( = QString(),  = -1,  = -1,  = QString(),  = QString())
 
-=item    QXmlParseException(const QString & name, int c = -1, int l = -1, const QString & p = QString(), const QString & s = QString())
+=item   ~QXmlParseException()
 
-=item    QXmlParseException(const QString & name, int c, int l = -1, const QString & p = QString(), const QString & s = QString())
+=item  int columnNumber()
 
-=item    QXmlParseException(const QString & name = QString(), int c = -1, int l = -1, const QString & p = QString(), const QString & s = QString())
+=item  int lineNumber()
 
-=item    QXmlParseException(const QString & name, int c = -1, int l = -1, const QString & p = QString(), const QString & s = QString())
+=item  QString message()
 
-=item    ~QXmlParseException()
+=item  QString publicId()
 
-=item   int columnNumber()
+=item  QString systemId()
 
-=item   int lineNumber()
 
-=item   QString message()
+=back
 
-=item   QString publicId()
+=head1 ENUM VALUES
 
-=item   QString systemId()
+=over
 
 
 =back

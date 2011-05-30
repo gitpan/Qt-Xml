@@ -19,7 +19,7 @@ PROTOTYPES: DISABLE
 ################################################################
 
 ##  QDomEntityReference()
-##  QDomEntityReference(const QDomEntityReference & x)
+##  QDomEntityReference()
   void
 QDomEntityReference::new(...)
 PREINIT:
@@ -27,32 +27,33 @@ QDomEntityReference *ret;
 QDomEntityReference * arg10;
 PPCODE:
     switch(items) {
-    case 1:
+      case 1:
       {
-        ret = new QDomEntityReference();
+        if (1) {
+      
+    ret = new QDomEntityReference();
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::Xml::QDomEntityReference", (void *)ret);
     XSRETURN(1);
+    }
         break;
       }
-    case 2:
+      case 2:
       {
         if (sv_isa(ST(1), "Qt::Xml::QDomEntityReference")) {
-        arg10 = reinterpret_cast<QDomEntityReference *>(SvIV((SV*)SvRV(ST(1))));
-    }
-    else
-        Perl_croak(aTHX_ "arg10 is not of type Qt::Xml::QDomEntityReference");
+      arg10 = reinterpret_cast<QDomEntityReference *>(SvIV((SV*)SvRV(ST(1))));
     ret = new QDomEntityReference(*arg10);
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::Xml::QDomEntityReference", (void *)ret);
     XSRETURN(1);
+    }
+	else
+            Perl_croak(aTHX_ "wrong number/type of arguments passed in");
         break;
       }
-    default:
-      {
+      default:
         Perl_croak(aTHX_ "wrong number/type of arguments passed in");
         break;
-      }
     }
 
 
@@ -62,23 +63,24 @@ void
 QDomEntityReference::nodeType(...)
 PREINIT:
 PPCODE:
+    if (1) {
+      
     QDomNode::NodeType ret = THIS->nodeType();
     ST(0) = sv_newmortal();
     sv_setiv(ST(0), (IV)ret);
     XSRETURN(1);
+    }
 
-## QDomEntityReference & operator=(const QDomEntityReference & arg0)
+## QDomEntityReference & operator=()
 void
 QDomEntityReference::operator_assign(...)
 PREINIT:
 QDomEntityReference * arg00;
 PPCODE:
     if (sv_isa(ST(1), "Qt::Xml::QDomEntityReference")) {
-        arg00 = reinterpret_cast<QDomEntityReference *>(SvIV((SV*)SvRV(ST(1))));
-    }
-    else
-        Perl_croak(aTHX_ "arg00 is not of type Qt::Xml::QDomEntityReference");
+      arg00 = reinterpret_cast<QDomEntityReference *>(SvIV((SV*)SvRV(ST(1))));
     QDomEntityReference * ret = &THIS->operator=(*arg00);
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::Xml::QDomEntityReference", (void *)ret);
     XSRETURN(1);
+    }

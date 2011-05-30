@@ -7,11 +7,10 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
+our $VERSION = '0.01_02';
 
 
 # FIXME: operator overload
-
 
 
 1;
@@ -24,23 +23,30 @@ Qt::Xml::QXmlInputSource
 
 =over
 
-=item    QXmlInputSource()
+=item   QXmlInputSource()
 
-=item    QXmlInputSource(QIODevice * dev)
+=item   QXmlInputSource()
 
-=item    ~QXmlInputSource()
+=item   ~QXmlInputSource()
 
-=item   QString data()
+=item  QString data()
 
-=item   void fetchData()
+=item  void fetchData()
 
-=item   QChar next()
+=item  QChar next()
 
-=item   void reset()
+=item  void reset()
 
-=item   void setData(const QString & dat)
+=item  void setData()
 
-=item   void setData(const QByteArray & dat)
+=item  void setData()
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
 
 
 =back

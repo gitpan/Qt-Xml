@@ -7,11 +7,10 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
+our $VERSION = '0.01_02';
 
 
 # FIXME: operator overload
-
 
 
 1;
@@ -24,15 +23,22 @@ Qt::Xml::QXmlDeclHandler
 
 =over
 
-=item    ~QXmlDeclHandler()
+=item   ~QXmlDeclHandler()
 
-=item   bool attributeDecl(const QString & eName, const QString & aName, const QString & type, const QString & valueDefault, const QString & value)
+=item  bool attributeDecl(, , , , )
 
-=item   QString errorString()
+=item  QString errorString()
 
-=item   bool externalEntityDecl(const QString & name, const QString & publicId, const QString & systemId)
+=item  bool externalEntityDecl(, , )
 
-=item   bool internalEntityDecl(const QString & name, const QString & value)
+=item  bool internalEntityDecl(, )
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
 
 
 =back

@@ -7,12 +7,11 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
-our $ISA     = qw/QDomNode/;
+our $VERSION = '0.01_02';
+our $ISA     = qw/Qt::Xml::QDomNode/;
 
 
 # FIXME: operator overload
-
 
 
 1;
@@ -25,157 +24,132 @@ Qt::Xml::QDomDocument
 
 =over
 
-=item    QDomDocument()
+=item   QDomDocument()
 
-=item    QDomDocument(const QString & name)
+=item   QDomDocument()
 
-=item    QDomDocument(const QDomDocumentType & doctype)
+=item   QDomDocument()
 
-=item    QDomDocument(const QDomDocument & x)
+=item   QDomDocument()
 
-=item    ~QDomDocument()
+=item   ~QDomDocument()
 
-=item   QDomAttr createAttribute(const QString & name)
+=item  QDomAttr createAttribute()
 
-=item   QDomAttr createAttributeNS(const QString & nsURI, const QString & qName)
+=item  QDomAttr createAttributeNS(, )
 
-=item   QDomCDATASection createCDATASection(const QString & data)
+=item  QDomCDATASection createCDATASection()
 
-=item   QDomComment createComment(const QString & data)
+=item  QDomComment createComment()
 
-=item   QDomDocumentFragment createDocumentFragment()
+=item  QDomDocumentFragment createDocumentFragment()
 
-=item   QDomElement createElement(const QString & tagName)
+=item  QDomElement createElement()
 
-=item   QDomElement createElementNS(const QString & nsURI, const QString & qName)
+=item  QDomElement createElementNS(, )
 
-=item   QDomEntityReference createEntityReference(const QString & name)
+=item  QDomEntityReference createEntityReference()
 
-=item   QDomProcessingInstruction createProcessingInstruction(const QString & target, const QString & data)
+=item  QDomProcessingInstruction createProcessingInstruction(, )
 
-=item   QDomText createTextNode(const QString & data)
+=item  QDomText createTextNode()
 
-=item   QDomDocumentType doctype()
+=item  QDomDocumentType doctype()
 
-=item   QDomElement documentElement()
+=item  QDomElement documentElement()
 
-=item   QDomElement elementById(const QString & elementId)
+=item  QDomElement elementById()
 
-=item   QDomNodeList elementsByTagName(const QString & tagname)
+=item  QDomNodeList elementsByTagName()
 
-=item   QDomNodeList elementsByTagNameNS(const QString & nsURI, const QString & localName)
+=item  QDomNodeList elementsByTagNameNS(, )
 
-=item   QDomImplementation implementation()
+=item  QDomImplementation implementation()
 
-=item   QDomNode importNode(const QDomNode & importedNode, bool deep)
+=item  QDomNode importNode(, )
 
-=item   QDomNode::NodeType nodeType()
+=item  QDomNode::NodeType nodeType()
 
-=item   QDomDocument & operator=(const QDomDocument & arg0)
+=item  QDomDocument & operator=()
 
-=item   bool setContent(const QByteArray & text, QString * errorMsg, int * errorLine, int * errorColumn = 0)
+=item  bool setContent(, , , )
 
-=item   bool setContent(const QByteArray & text, QString * errorMsg, int * errorLine, int * errorColumn)
+=item  bool setContent(, , ,  = 0)
 
-=item   bool setContent(const QByteArray & text, QString * errorMsg, int * errorLine = 0, int * errorColumn = 0)
+=item  bool setContent(, ,  = 0,  = 0)
 
-=item   bool setContent(const QByteArray & text, QString * errorMsg, int * errorLine, int * errorColumn = 0)
+=item  bool setContent(,  = 0,  = 0,  = 0)
 
-=item   bool setContent(const QByteArray & text, QString * errorMsg = 0, int * errorLine = 0, int * errorColumn = 0)
+=item  bool setContent(, , , )
 
-=item   bool setContent(const QByteArray & text, QString * errorMsg, int * errorLine = 0, int * errorColumn = 0)
+=item  bool setContent(, , ,  = 0)
 
-=item   bool setContent(const QString & text, QString * errorMsg, int * errorLine, int * errorColumn = 0)
+=item  bool setContent(, ,  = 0,  = 0)
 
-=item   bool setContent(const QString & text, QString * errorMsg, int * errorLine, int * errorColumn)
+=item  bool setContent(,  = 0,  = 0,  = 0)
 
-=item   bool setContent(const QString & text, QString * errorMsg, int * errorLine = 0, int * errorColumn = 0)
+=item  bool setContent(, , , )
 
-=item   bool setContent(const QString & text, QString * errorMsg, int * errorLine, int * errorColumn = 0)
+=item  bool setContent(, , ,  = 0)
 
-=item   bool setContent(const QString & text, QString * errorMsg = 0, int * errorLine = 0, int * errorColumn = 0)
+=item  bool setContent(, ,  = 0,  = 0)
 
-=item   bool setContent(const QString & text, QString * errorMsg, int * errorLine = 0, int * errorColumn = 0)
+=item  bool setContent(,  = 0,  = 0,  = 0)
 
-=item   bool setContent(QIODevice * dev, QString * errorMsg, int * errorLine, int * errorColumn = 0)
+=item  bool setContent(, , , , )
 
-=item   bool setContent(QIODevice * dev, QString * errorMsg, int * errorLine, int * errorColumn)
+=item  bool setContent(, , , ,  = 0)
 
-=item   bool setContent(QIODevice * dev, QString * errorMsg, int * errorLine = 0, int * errorColumn = 0)
+=item  bool setContent(, , ,  = 0,  = 0)
 
-=item   bool setContent(QIODevice * dev, QString * errorMsg, int * errorLine, int * errorColumn = 0)
+=item  bool setContent(, ,  = 0,  = 0,  = 0)
 
-=item   bool setContent(QIODevice * dev, QString * errorMsg = 0, int * errorLine = 0, int * errorColumn = 0)
+=item  bool setContent(, , , , )
 
-=item   bool setContent(QIODevice * dev, QString * errorMsg, int * errorLine = 0, int * errorColumn = 0)
+=item  bool setContent(, , , ,  = 0)
 
-=item   bool setContent(const QByteArray & text, bool namespaceProcessing, QString * errorMsg, int * errorLine, int * errorColumn = 0)
+=item  bool setContent(, , ,  = 0,  = 0)
 
-=item   bool setContent(const QByteArray & text, bool namespaceProcessing, QString * errorMsg, int * errorLine, int * errorColumn)
+=item  bool setContent(, ,  = 0,  = 0,  = 0)
 
-=item   bool setContent(const QByteArray & text, bool namespaceProcessing, QString * errorMsg, int * errorLine = 0, int * errorColumn = 0)
+=item  bool setContent(, , , , )
 
-=item   bool setContent(const QByteArray & text, bool namespaceProcessing, QString * errorMsg, int * errorLine, int * errorColumn = 0)
+=item  bool setContent(, , , ,  = 0)
 
-=item   bool setContent(const QByteArray & text, bool namespaceProcessing, QString * errorMsg = 0, int * errorLine = 0, int * errorColumn = 0)
+=item  bool setContent(, , ,  = 0,  = 0)
 
-=item   bool setContent(const QByteArray & text, bool namespaceProcessing, QString * errorMsg, int * errorLine = 0, int * errorColumn = 0)
+=item  bool setContent(, ,  = 0,  = 0,  = 0)
 
-=item   bool setContent(const QString & text, bool namespaceProcessing, QString * errorMsg, int * errorLine, int * errorColumn = 0)
+=item  bool setContent(, , , , )
 
-=item   bool setContent(const QString & text, bool namespaceProcessing, QString * errorMsg, int * errorLine, int * errorColumn)
+=item  bool setContent(, , , ,  = 0)
 
-=item   bool setContent(const QString & text, bool namespaceProcessing, QString * errorMsg, int * errorLine = 0, int * errorColumn = 0)
+=item  bool setContent(, , ,  = 0,  = 0)
 
-=item   bool setContent(const QString & text, bool namespaceProcessing, QString * errorMsg, int * errorLine, int * errorColumn = 0)
+=item  bool setContent(, ,  = 0,  = 0,  = 0)
 
-=item   bool setContent(const QString & text, bool namespaceProcessing, QString * errorMsg = 0, int * errorLine = 0, int * errorColumn = 0)
+=item  bool setContent(, , , , )
 
-=item   bool setContent(const QString & text, bool namespaceProcessing, QString * errorMsg, int * errorLine = 0, int * errorColumn = 0)
+=item  bool setContent(, , , ,  = 0)
 
-=item   bool setContent(QIODevice * dev, bool namespaceProcessing, QString * errorMsg, int * errorLine, int * errorColumn = 0)
+=item  bool setContent(, , ,  = 0,  = 0)
 
-=item   bool setContent(QIODevice * dev, bool namespaceProcessing, QString * errorMsg, int * errorLine, int * errorColumn)
+=item  bool setContent(, ,  = 0,  = 0,  = 0)
 
-=item   bool setContent(QIODevice * dev, bool namespaceProcessing, QString * errorMsg, int * errorLine = 0, int * errorColumn = 0)
+=item  QByteArray toByteArray()
 
-=item   bool setContent(QIODevice * dev, bool namespaceProcessing, QString * errorMsg, int * errorLine, int * errorColumn = 0)
+=item  QByteArray toByteArray( = 1)
 
-=item   bool setContent(QIODevice * dev, bool namespaceProcessing, QString * errorMsg = 0, int * errorLine = 0, int * errorColumn = 0)
+=item  QString toString()
 
-=item   bool setContent(QIODevice * dev, bool namespaceProcessing, QString * errorMsg, int * errorLine = 0, int * errorColumn = 0)
+=item  QString toString( = 1)
 
-=item   bool setContent(QXmlInputSource * source, bool namespaceProcessing, QString * errorMsg, int * errorLine, int * errorColumn = 0)
 
-=item   bool setContent(QXmlInputSource * source, bool namespaceProcessing, QString * errorMsg, int * errorLine, int * errorColumn)
+=back
 
-=item   bool setContent(QXmlInputSource * source, bool namespaceProcessing, QString * errorMsg, int * errorLine = 0, int * errorColumn = 0)
+=head1 ENUM VALUES
 
-=item   bool setContent(QXmlInputSource * source, bool namespaceProcessing, QString * errorMsg, int * errorLine, int * errorColumn = 0)
-
-=item   bool setContent(QXmlInputSource * source, bool namespaceProcessing, QString * errorMsg = 0, int * errorLine = 0, int * errorColumn = 0)
-
-=item   bool setContent(QXmlInputSource * source, bool namespaceProcessing, QString * errorMsg, int * errorLine = 0, int * errorColumn = 0)
-
-=item   bool setContent(QXmlInputSource * source, QXmlReader * reader, QString * errorMsg, int * errorLine, int * errorColumn = 0)
-
-=item   bool setContent(QXmlInputSource * source, QXmlReader * reader, QString * errorMsg, int * errorLine, int * errorColumn)
-
-=item   bool setContent(QXmlInputSource * source, QXmlReader * reader, QString * errorMsg, int * errorLine = 0, int * errorColumn = 0)
-
-=item   bool setContent(QXmlInputSource * source, QXmlReader * reader, QString * errorMsg, int * errorLine, int * errorColumn = 0)
-
-=item   bool setContent(QXmlInputSource * source, QXmlReader * reader, QString * errorMsg = 0, int * errorLine = 0, int * errorColumn = 0)
-
-=item   bool setContent(QXmlInputSource * source, QXmlReader * reader, QString * errorMsg, int * errorLine = 0, int * errorColumn = 0)
-
-=item   QByteArray toByteArray(int arg0 = 1)
-
-=item   QByteArray toByteArray(int arg0)
-
-=item   QString toString(int arg0 = 1)
-
-=item   QString toString(int arg0)
+=over
 
 
 =back

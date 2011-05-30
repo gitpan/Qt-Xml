@@ -7,11 +7,10 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
+our $VERSION = '0.01_02';
 
 
 # FIXME: operator overload
-
 
 
 1;
@@ -24,29 +23,36 @@ Qt::Xml::QDomNodeList
 
 =over
 
-=item    QDomNodeList()
+=item   QDomNodeList()
 
-=item    QDomNodeList(const QDomNodeList & arg0)
+=item   QDomNodeList()
 
-=item    ~QDomNodeList()
+=item   ~QDomNodeList()
 
-=item   QDomNode at(int index)
+=item  QDomNode at()
 
-=item   int count()
+=item  int count()
 
-=item   bool isEmpty()
+=item  bool isEmpty()
 
-=item   QDomNode item(int index)
+=item  QDomNode item()
 
-=item   uint length()
+=item  uint length()
 
-=item   bool operator!=(const QDomNodeList & arg0)
+=item  bool operator!=()
 
-=item   QDomNodeList & operator=(const QDomNodeList & arg0)
+=item  QDomNodeList & operator=()
 
-=item   bool operator==(const QDomNodeList & arg0)
+=item  bool operator==()
 
-=item   int size()
+=item  int size()
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
 
 
 =back

@@ -7,11 +7,10 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
+our $VERSION = '0.01_02';
 
 
 # FIXME: operator overload
-
 
 
 1;
@@ -24,13 +23,20 @@ Qt::Xml::QXmlLocator
 
 =over
 
-=item    QXmlLocator()
+=item   QXmlLocator()
 
-=item    ~QXmlLocator()
+=item   ~QXmlLocator()
 
-=item   int columnNumber()
+=item  int columnNumber()
 
-=item   int lineNumber()
+=item  int lineNumber()
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
 
 
 =back

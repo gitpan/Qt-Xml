@@ -7,12 +7,11 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
-our $ISA     = qw/QDomNode/;
+our $VERSION = '0.01_02';
+our $ISA     = qw/Qt::Xml::QDomNode/;
 
 
 # FIXME: operator overload
-
 
 
 1;
@@ -25,77 +24,84 @@ Qt::Xml::QDomElement
 
 =over
 
-=item    QDomElement()
+=item   QDomElement()
 
-=item    QDomElement(const QDomElement & x)
+=item   QDomElement()
 
-=item   QString attribute(const QString & name, const QString & defValue = QString())
+=item  QString attribute(, )
 
-=item   QString attribute(const QString & name, const QString & defValue)
+=item  QString attribute(,  = QString())
 
-=item   QString attributeNS(const QString nsURI, const QString & localName, const QString & defValue = QString())
+=item  QString attributeNS(, , )
 
-=item   QString attributeNS(const QString nsURI, const QString & localName, const QString & defValue)
+=item  QString attributeNS(, ,  = QString())
 
-=item   QDomAttr attributeNode(const QString & name)
+=item  QDomAttr attributeNode()
 
-=item   QDomAttr attributeNodeNS(const QString & nsURI, const QString & localName)
+=item  QDomAttr attributeNodeNS(, )
 
-=item   QDomNamedNodeMap attributes()
+=item  QDomNamedNodeMap attributes()
 
-=item   QDomNodeList elementsByTagName(const QString & tagname)
+=item  QDomNodeList elementsByTagName()
 
-=item   QDomNodeList elementsByTagNameNS(const QString & nsURI, const QString & localName)
+=item  QDomNodeList elementsByTagNameNS(, )
 
-=item   bool hasAttribute(const QString & name)
+=item  bool hasAttribute()
 
-=item   bool hasAttributeNS(const QString & nsURI, const QString & localName)
+=item  bool hasAttributeNS(, )
 
-=item   QDomNode::NodeType nodeType()
+=item  QDomNode::NodeType nodeType()
 
-=item   QDomElement & operator=(const QDomElement & arg0)
+=item  QDomElement & operator=()
 
-=item   void removeAttribute(const QString & name)
+=item  void removeAttribute()
 
-=item   void removeAttributeNS(const QString & nsURI, const QString & localName)
+=item  void removeAttributeNS(, )
 
-=item   QDomAttr removeAttributeNode(const QDomAttr & oldAttr)
+=item  QDomAttr removeAttributeNode()
 
-=item   void setAttribute(const QString & name, const QString & value)
+=item  void setAttribute(, )
 
-=item   void setAttribute(const QString & name, qlonglong value)
+=item  void setAttribute(, )
 
-=item   void setAttribute(const QString & name, qulonglong value)
+=item  void setAttribute(, )
 
-=item   void setAttribute(const QString & name, int value)
+=item  void setAttribute(, )
 
-=item   void setAttribute(const QString & name, uint value)
+=item  void setAttribute(, )
 
-=item   void setAttribute(const QString & name, float value)
+=item  void setAttribute(, )
 
-=item   void setAttribute(const QString & name, double value)
+=item  void setAttribute(, )
 
-=item   void setAttributeNS(const QString nsURI, const QString & qName, const QString & value)
+=item  void setAttributeNS(, , )
 
-=item   void setAttributeNS(const QString nsURI, const QString & qName, int value)
+=item  void setAttributeNS(, , )
 
-=item   void setAttributeNS(const QString nsURI, const QString & qName, uint value)
+=item  void setAttributeNS(, , )
 
-=item   void setAttributeNS(const QString nsURI, const QString & qName, qlonglong value)
+=item  void setAttributeNS(, , )
 
-=item   void setAttributeNS(const QString nsURI, const QString & qName, qulonglong value)
+=item  void setAttributeNS(, , )
 
-=item   void setAttributeNS(const QString nsURI, const QString & qName, double value)
+=item  void setAttributeNS(, , )
 
-=item   QDomAttr setAttributeNode(const QDomAttr & newAttr)
+=item  QDomAttr setAttributeNode()
 
-=item   QDomAttr setAttributeNodeNS(const QDomAttr & newAttr)
+=item  QDomAttr setAttributeNodeNS()
 
-=item   void setTagName(const QString & name)
+=item  void setTagName()
 
-=item   QString tagName()
+=item  QString tagName()
 
-=item   QString text()
+=item  QString text()
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
 
 
 =back

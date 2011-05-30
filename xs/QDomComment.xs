@@ -19,7 +19,7 @@ PROTOTYPES: DISABLE
 ################################################################
 
 ##  QDomComment()
-##  QDomComment(const QDomComment & x)
+##  QDomComment()
   void
 QDomComment::new(...)
 PREINIT:
@@ -27,32 +27,33 @@ QDomComment *ret;
 QDomComment * arg10;
 PPCODE:
     switch(items) {
-    case 1:
+      case 1:
       {
-        ret = new QDomComment();
+        if (1) {
+      
+    ret = new QDomComment();
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::Xml::QDomComment", (void *)ret);
     XSRETURN(1);
+    }
         break;
       }
-    case 2:
+      case 2:
       {
         if (sv_isa(ST(1), "Qt::Xml::QDomComment")) {
-        arg10 = reinterpret_cast<QDomComment *>(SvIV((SV*)SvRV(ST(1))));
-    }
-    else
-        Perl_croak(aTHX_ "arg10 is not of type Qt::Xml::QDomComment");
+      arg10 = reinterpret_cast<QDomComment *>(SvIV((SV*)SvRV(ST(1))));
     ret = new QDomComment(*arg10);
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::Xml::QDomComment", (void *)ret);
     XSRETURN(1);
+    }
+	else
+            Perl_croak(aTHX_ "wrong number/type of arguments passed in");
         break;
       }
-    default:
-      {
+      default:
         Perl_croak(aTHX_ "wrong number/type of arguments passed in");
         break;
-      }
     }
 
 
@@ -62,23 +63,24 @@ void
 QDomComment::nodeType(...)
 PREINIT:
 PPCODE:
+    if (1) {
+      
     QDomNode::NodeType ret = THIS->nodeType();
     ST(0) = sv_newmortal();
     sv_setiv(ST(0), (IV)ret);
     XSRETURN(1);
+    }
 
-## QDomComment & operator=(const QDomComment & arg0)
+## QDomComment & operator=()
 void
 QDomComment::operator_assign(...)
 PREINIT:
 QDomComment * arg00;
 PPCODE:
     if (sv_isa(ST(1), "Qt::Xml::QDomComment")) {
-        arg00 = reinterpret_cast<QDomComment *>(SvIV((SV*)SvRV(ST(1))));
-    }
-    else
-        Perl_croak(aTHX_ "arg00 is not of type Qt::Xml::QDomComment");
+      arg00 = reinterpret_cast<QDomComment *>(SvIV((SV*)SvRV(ST(1))));
     QDomComment * ret = &THIS->operator=(*arg00);
     ST(0) = sv_newmortal();
     sv_setref_pv(ST(0), "Qt::Xml::QDomComment", (void *)ret);
     XSRETURN(1);
+    }

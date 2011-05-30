@@ -7,11 +7,10 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_01';
+our $VERSION = '0.01_02';
 
 
 # FIXME: operator overload
-
 
 
 1;
@@ -24,23 +23,30 @@ Qt::Xml::QXmlLexicalHandler
 
 =over
 
-=item    ~QXmlLexicalHandler()
+=item   ~QXmlLexicalHandler()
 
-=item   bool comment(const QString & ch)
+=item  bool comment()
 
-=item   bool endCDATA()
+=item  bool endCDATA()
 
-=item   bool endDTD()
+=item  bool endDTD()
 
-=item   bool endEntity(const QString & name)
+=item  bool endEntity()
 
-=item   QString errorString()
+=item  QString errorString()
 
-=item   bool startCDATA()
+=item  bool startCDATA()
 
-=item   bool startDTD(const QString & name, const QString & publicId, const QString & systemId)
+=item  bool startDTD(, , )
 
-=item   bool startEntity(const QString & name)
+=item  bool startEntity()
+
+
+=back
+
+=head1 ENUM VALUES
+
+=over
 
 
 =back
