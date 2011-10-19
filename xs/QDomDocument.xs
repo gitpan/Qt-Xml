@@ -19,9 +19,9 @@ PROTOTYPES: DISABLE
 ################################################################
 
 ##  QDomDocument()
-##  QDomDocument()
-##  QDomDocument()
-##  QDomDocument()
+##  QDomDocument(const QString & name)
+##  QDomDocument(const QDomDocumentType & doctype)
+##  QDomDocument(const QDomDocument & x)
   void
 QDomDocument::new(...)
 PREINIT:
@@ -81,7 +81,7 @@ CODE:
     if(THIS != 0 && !SvREADONLY(SvRV(ST(0))))
         delete THIS;
 
-## QDomAttr createAttribute()
+## QDomAttr createAttribute(const QString & name)
 void
 QDomDocument::createAttribute(...)
 PREINIT:
@@ -95,7 +95,7 @@ PPCODE:
     XSRETURN(1);
     }
 
-## QDomAttr createAttributeNS(, )
+## QDomAttr createAttributeNS(const QString & nsURI, const QString & qName)
 void
 QDomDocument::createAttributeNS(...)
 PREINIT:
@@ -111,7 +111,7 @@ PPCODE:
     XSRETURN(1);
     }
 
-## QDomCDATASection createCDATASection()
+## QDomCDATASection createCDATASection(const QString & data)
 void
 QDomDocument::createCDATASection(...)
 PREINIT:
@@ -125,7 +125,7 @@ PPCODE:
     XSRETURN(1);
     }
 
-## QDomComment createComment()
+## QDomComment createComment(const QString & data)
 void
 QDomDocument::createComment(...)
 PREINIT:
@@ -152,7 +152,7 @@ PPCODE:
     XSRETURN(1);
     }
 
-## QDomElement createElement()
+## QDomElement createElement(const QString & tagName)
 void
 QDomDocument::createElement(...)
 PREINIT:
@@ -166,7 +166,7 @@ PPCODE:
     XSRETURN(1);
     }
 
-## QDomElement createElementNS(, )
+## QDomElement createElementNS(const QString & nsURI, const QString & qName)
 void
 QDomDocument::createElementNS(...)
 PREINIT:
@@ -182,7 +182,7 @@ PPCODE:
     XSRETURN(1);
     }
 
-## QDomEntityReference createEntityReference()
+## QDomEntityReference createEntityReference(const QString & name)
 void
 QDomDocument::createEntityReference(...)
 PREINIT:
@@ -196,7 +196,7 @@ PPCODE:
     XSRETURN(1);
     }
 
-## QDomProcessingInstruction createProcessingInstruction(, )
+## QDomProcessingInstruction createProcessingInstruction(const QString & target, const QString & data)
 void
 QDomDocument::createProcessingInstruction(...)
 PREINIT:
@@ -212,7 +212,7 @@ PPCODE:
     XSRETURN(1);
     }
 
-## QDomText createTextNode()
+## QDomText createTextNode(const QString & data)
 void
 QDomDocument::createTextNode(...)
 PREINIT:
@@ -252,7 +252,7 @@ PPCODE:
     XSRETURN(1);
     }
 
-## QDomElement elementById()
+## QDomElement elementById(const QString & elementId)
 void
 QDomDocument::elementById(...)
 PREINIT:
@@ -266,7 +266,7 @@ PPCODE:
     XSRETURN(1);
     }
 
-## QDomNodeList elementsByTagName()
+## QDomNodeList elementsByTagName(const QString & tagname)
 void
 QDomDocument::elementsByTagName(...)
 PREINIT:
@@ -280,7 +280,7 @@ PPCODE:
     XSRETURN(1);
     }
 
-## QDomNodeList elementsByTagNameNS(, )
+## QDomNodeList elementsByTagNameNS(const QString & nsURI, const QString & localName)
 void
 QDomDocument::elementsByTagNameNS(...)
 PREINIT:
@@ -309,7 +309,7 @@ PPCODE:
     XSRETURN(1);
     }
 
-## QDomNode importNode(, )
+## QDomNode importNode(const QDomNode & importedNode, bool deep)
 void
 QDomDocument::importNode(...)
 PREINIT:
@@ -338,7 +338,7 @@ PPCODE:
     XSRETURN(1);
     }
 
-## QDomDocument & operator=()
+## QDomDocument & operator=(const QDomDocument & arg0)
 void
 QDomDocument::operator_assign(...)
 PREINIT:
@@ -352,38 +352,38 @@ PPCODE:
     XSRETURN(1);
     }
 
-## bool setContent(, , , )
-## bool setContent(, , ,  = 0)
-## bool setContent(, ,  = 0,  = 0)
-## bool setContent(,  = 0,  = 0,  = 0)
-## bool setContent(, , , )
-## bool setContent(, , ,  = 0)
-## bool setContent(, ,  = 0,  = 0)
-## bool setContent(,  = 0,  = 0,  = 0)
-## bool setContent(, , , )
-## bool setContent(, , ,  = 0)
-## bool setContent(, ,  = 0,  = 0)
-## bool setContent(,  = 0,  = 0,  = 0)
-## bool setContent(, , , , )
-## bool setContent(, , , ,  = 0)
-## bool setContent(, , ,  = 0,  = 0)
-## bool setContent(, ,  = 0,  = 0,  = 0)
-## bool setContent(, , , , )
-## bool setContent(, , , ,  = 0)
-## bool setContent(, , ,  = 0,  = 0)
-## bool setContent(, ,  = 0,  = 0,  = 0)
-## bool setContent(, , , , )
-## bool setContent(, , , ,  = 0)
-## bool setContent(, , ,  = 0,  = 0)
-## bool setContent(, ,  = 0,  = 0,  = 0)
-## bool setContent(, , , , )
-## bool setContent(, , , ,  = 0)
-## bool setContent(, , ,  = 0,  = 0)
-## bool setContent(, ,  = 0,  = 0,  = 0)
-## bool setContent(, , , , )
-## bool setContent(, , , ,  = 0)
-## bool setContent(, , ,  = 0,  = 0)
-## bool setContent(, ,  = 0,  = 0,  = 0)
+## bool setContent(const QByteArray & text, QString * errorMsg, int * errorLine, int * errorColumn)
+## bool setContent(const QByteArray & text, QString * errorMsg, int * errorLine, int * errorColumn = 0)
+## bool setContent(const QByteArray & text, QString * errorMsg, int * errorLine = 0, int * errorColumn = 0)
+## bool setContent(const QByteArray & text, QString * errorMsg = 0, int * errorLine = 0, int * errorColumn = 0)
+## bool setContent(const QString & text, QString * errorMsg, int * errorLine, int * errorColumn)
+## bool setContent(const QString & text, QString * errorMsg, int * errorLine, int * errorColumn = 0)
+## bool setContent(const QString & text, QString * errorMsg, int * errorLine = 0, int * errorColumn = 0)
+## bool setContent(const QString & text, QString * errorMsg = 0, int * errorLine = 0, int * errorColumn = 0)
+## bool setContent(QIODevice * dev, QString * errorMsg, int * errorLine, int * errorColumn)
+## bool setContent(QIODevice * dev, QString * errorMsg, int * errorLine, int * errorColumn = 0)
+## bool setContent(QIODevice * dev, QString * errorMsg, int * errorLine = 0, int * errorColumn = 0)
+## bool setContent(QIODevice * dev, QString * errorMsg = 0, int * errorLine = 0, int * errorColumn = 0)
+## bool setContent(const QByteArray & text, bool namespaceProcessing, QString * errorMsg, int * errorLine, int * errorColumn)
+## bool setContent(const QByteArray & text, bool namespaceProcessing, QString * errorMsg, int * errorLine, int * errorColumn = 0)
+## bool setContent(const QByteArray & text, bool namespaceProcessing, QString * errorMsg, int * errorLine = 0, int * errorColumn = 0)
+## bool setContent(const QByteArray & text, bool namespaceProcessing, QString * errorMsg = 0, int * errorLine = 0, int * errorColumn = 0)
+## bool setContent(const QString & text, bool namespaceProcessing, QString * errorMsg, int * errorLine, int * errorColumn)
+## bool setContent(const QString & text, bool namespaceProcessing, QString * errorMsg, int * errorLine, int * errorColumn = 0)
+## bool setContent(const QString & text, bool namespaceProcessing, QString * errorMsg, int * errorLine = 0, int * errorColumn = 0)
+## bool setContent(const QString & text, bool namespaceProcessing, QString * errorMsg = 0, int * errorLine = 0, int * errorColumn = 0)
+## bool setContent(QIODevice * dev, bool namespaceProcessing, QString * errorMsg, int * errorLine, int * errorColumn)
+## bool setContent(QIODevice * dev, bool namespaceProcessing, QString * errorMsg, int * errorLine, int * errorColumn = 0)
+## bool setContent(QIODevice * dev, bool namespaceProcessing, QString * errorMsg, int * errorLine = 0, int * errorColumn = 0)
+## bool setContent(QIODevice * dev, bool namespaceProcessing, QString * errorMsg = 0, int * errorLine = 0, int * errorColumn = 0)
+## bool setContent(QXmlInputSource * source, bool namespaceProcessing, QString * errorMsg, int * errorLine, int * errorColumn)
+## bool setContent(QXmlInputSource * source, bool namespaceProcessing, QString * errorMsg, int * errorLine, int * errorColumn = 0)
+## bool setContent(QXmlInputSource * source, bool namespaceProcessing, QString * errorMsg, int * errorLine = 0, int * errorColumn = 0)
+## bool setContent(QXmlInputSource * source, bool namespaceProcessing, QString * errorMsg = 0, int * errorLine = 0, int * errorColumn = 0)
+## bool setContent(QXmlInputSource * source, QXmlReader * reader, QString * errorMsg, int * errorLine, int * errorColumn)
+## bool setContent(QXmlInputSource * source, QXmlReader * reader, QString * errorMsg, int * errorLine, int * errorColumn = 0)
+## bool setContent(QXmlInputSource * source, QXmlReader * reader, QString * errorMsg, int * errorLine = 0, int * errorColumn = 0)
+## bool setContent(QXmlInputSource * source, QXmlReader * reader, QString * errorMsg = 0, int * errorLine = 0, int * errorColumn = 0)
 void
 QDomDocument::setContent(...)
 PREINIT:
@@ -1244,8 +1244,8 @@ PPCODE:
         break;
     }
 
-## QByteArray toByteArray()
-## QByteArray toByteArray( = 1)
+## QByteArray toByteArray(int arg0)
+## QByteArray toByteArray(int arg0 = 1)
 void
 QDomDocument::toByteArray(...)
 PREINIT:
@@ -1282,8 +1282,8 @@ PPCODE:
         break;
     }
 
-## QString toString()
-## QString toString( = 1)
+## QString toString(int arg0)
+## QString toString(int arg0 = 1)
 void
 QDomDocument::toString(...)
 PREINIT:

@@ -7,7 +7,7 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_02';
+our $VERSION = '0.01_03';
 
 
 # FIXME: operator overload
@@ -27,9 +27,9 @@ Qt::Xml::QXmlDTDHandler
 
 =item  QString errorString()
 
-=item  bool notationDecl(, , )
+=item  bool notationDecl(const QString & name, const QString & publicId, const QString & systemId)
 
-=item  bool unparsedEntityDecl(, , , )
+=item  bool unparsedEntityDecl(const QString & name, const QString & publicId, const QString & systemId, const QString & notationName)
 
 
 =back

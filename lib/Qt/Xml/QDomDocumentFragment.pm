@@ -7,8 +7,9 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_02';
-our $ISA     = qw/Qt::Xml::QDomNode/;
+our $VERSION = '0.01_03';
+use base qw/Qt::Xml::QDomNode/;
+#our @ISA = qw/Qt::Xml::QDomNode/;
 
 
 # FIXME: operator overload
@@ -26,11 +27,11 @@ Qt::Xml::QDomDocumentFragment
 
 =item   QDomDocumentFragment()
 
-=item   QDomDocumentFragment()
+=item   QDomDocumentFragment(const QDomDocumentFragment & x)
 
 =item  QDomNode::NodeType nodeType()
 
-=item  QDomDocumentFragment & operator=()
+=item  QDomDocumentFragment & operator=(const QDomDocumentFragment & arg0)
 
 
 =back

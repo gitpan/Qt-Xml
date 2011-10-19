@@ -19,7 +19,7 @@ PROTOTYPES: DISABLE
 ################################################################
 
 ##  QDomNode()
-##  QDomNode()
+##  QDomNode(const QDomNode & arg0)
   void
 QDomNode::new(...)
 PREINIT:
@@ -63,7 +63,7 @@ CODE:
     if(THIS != 0 && !SvREADONLY(SvRV(ST(0))))
         delete THIS;
 
-## QDomNode appendChild()
+## QDomNode appendChild(const QDomNode & newChild)
 void
 QDomNode::appendChild(...)
 PREINIT:
@@ -114,8 +114,8 @@ PPCODE:
     XSRETURN(0);
     }
 
-## QDomNode cloneNode()
-## QDomNode cloneNode( = true)
+## QDomNode cloneNode(bool deep)
+## QDomNode cloneNode(bool deep = true)
 void
 QDomNode::cloneNode(...)
 PREINIT:
@@ -178,8 +178,8 @@ PPCODE:
     XSRETURN(1);
     }
 
-## QDomElement firstChildElement()
-## QDomElement firstChildElement( = QString())
+## QDomElement firstChildElement(const QString & tagName)
+## QDomElement firstChildElement(const QString & tagName = QString())
 void
 QDomNode::firstChildElement(...)
 PREINIT:
@@ -243,7 +243,7 @@ PPCODE:
     XSRETURN(1);
     }
 
-## QDomNode insertAfter(, )
+## QDomNode insertAfter(const QDomNode & newChild, const QDomNode & refChild)
 void
 QDomNode::insertAfter(...)
 PREINIT:
@@ -259,7 +259,7 @@ PPCODE:
     XSRETURN(1);
     }
 
-## QDomNode insertBefore(, )
+## QDomNode insertBefore(const QDomNode & newChild, const QDomNode & refChild)
 void
 QDomNode::insertBefore(...)
 PREINIT:
@@ -444,7 +444,7 @@ PPCODE:
     XSRETURN(1);
     }
 
-## bool isSupported(, )
+## bool isSupported(const QString & feature, const QString & version)
 void
 QDomNode::isSupported(...)
 PREINIT:
@@ -486,8 +486,8 @@ PPCODE:
     XSRETURN(1);
     }
 
-## QDomElement lastChildElement()
-## QDomElement lastChildElement( = QString())
+## QDomElement lastChildElement(const QString & tagName)
+## QDomElement lastChildElement(const QString & tagName = QString())
 void
 QDomNode::lastChildElement(...)
 PREINIT:
@@ -551,7 +551,7 @@ PPCODE:
     XSRETURN(1);
     }
 
-## QDomNode namedItem()
+## QDomNode namedItem(const QString & name)
 void
 QDomNode::namedItem(...)
 PREINIT:
@@ -591,8 +591,8 @@ PPCODE:
     XSRETURN(1);
     }
 
-## QDomElement nextSiblingElement()
-## QDomElement nextSiblingElement( = QString())
+## QDomElement nextSiblingElement(const QString & taName)
+## QDomElement nextSiblingElement(const QString & taName = QString())
 void
 QDomNode::nextSiblingElement(...)
 PREINIT:
@@ -680,7 +680,7 @@ PPCODE:
     XSRETURN(0);
     }
 
-## bool operator!=()
+## bool operator!=(const QDomNode & arg0)
 void
 QDomNode::operator_not_equal(...)
 PREINIT:
@@ -694,7 +694,7 @@ PPCODE:
     XSRETURN(1);
     }
 
-## QDomNode & operator=()
+## QDomNode & operator=(const QDomNode & arg0)
 void
 QDomNode::operator_assign(...)
 PREINIT:
@@ -708,7 +708,7 @@ PPCODE:
     XSRETURN(1);
     }
 
-## bool operator==()
+## bool operator==(const QDomNode & arg0)
 void
 QDomNode::operator_equal_to(...)
 PREINIT:
@@ -774,8 +774,8 @@ PPCODE:
     XSRETURN(1);
     }
 
-## QDomElement previousSiblingElement()
-## QDomElement previousSiblingElement( = QString())
+## QDomElement previousSiblingElement(const QString & tagName)
+## QDomElement previousSiblingElement(const QString & tagName = QString())
 void
 QDomNode::previousSiblingElement(...)
 PREINIT:
@@ -813,7 +813,7 @@ PPCODE:
         break;
     }
 
-## QDomNode removeChild()
+## QDomNode removeChild(const QDomNode & oldChild)
 void
 QDomNode::removeChild(...)
 PREINIT:
@@ -827,7 +827,7 @@ PPCODE:
     XSRETURN(1);
     }
 
-## QDomNode replaceChild(, )
+## QDomNode replaceChild(const QDomNode & newChild, const QDomNode & oldChild)
 void
 QDomNode::replaceChild(...)
 PREINIT:
@@ -843,8 +843,8 @@ PPCODE:
     XSRETURN(1);
     }
 
-## void save(, )
-## void save(, , )
+## void save(QTextStream & arg0, int arg1)
+## void save(QTextStream & arg0, int arg1, QDomNode::EncodingPolicy arg2)
 void
 QDomNode::save(...)
 PREINIT:
@@ -885,7 +885,7 @@ PPCODE:
         break;
     }
 
-## void setNodeValue()
+## void setNodeValue(const QString & arg0)
 void
 QDomNode::setNodeValue(...)
 PREINIT:
@@ -897,7 +897,7 @@ PPCODE:
     XSRETURN(0);
     }
 
-## void setPrefix()
+## void setPrefix(const QString & pre)
 void
 QDomNode::setPrefix(...)
 PREINIT:

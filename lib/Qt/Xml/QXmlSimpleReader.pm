@@ -7,8 +7,9 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_02';
-our $ISA     = qw/Qt::Xml::QXmlReader/;
+our $VERSION = '0.01_03';
+use base qw/Qt::Xml::QXmlReader/;
+#our @ISA = qw/Qt::Xml::QXmlReader/;
 
 
 # FIXME: operator overload
@@ -38,43 +39,43 @@ Qt::Xml::QXmlSimpleReader
 
 =item  QXmlErrorHandler * errorHandler()
 
-=item  bool feature(, )
+=item  bool feature(const QString & name, bool * ok)
 
-=item  bool feature(,  = 0)
+=item  bool feature(const QString & name, bool * ok = 0)
 
-=item  bool hasFeature()
+=item  bool hasFeature(const QString & name)
 
-=item  bool hasProperty()
+=item  bool hasProperty(const QString & name)
 
 =item  QXmlLexicalHandler * lexicalHandler()
 
-=item  bool parse()
+=item  bool parse(const QXmlInputSource & input)
 
-=item  bool parse()
+=item  bool parse(const QXmlInputSource * input)
 
-=item  bool parse(, )
+=item  bool parse(const QXmlInputSource * input, bool incremental)
 
 =item  bool parseContinue()
 
-=item  void * property(, )
+=item  void * property(const QString & name, bool * ok)
 
-=item  void * property(,  = 0)
+=item  void * property(const QString & name, bool * ok = 0)
 
-=item  void setContentHandler()
+=item  void setContentHandler(QXmlContentHandler * handler)
 
-=item  void setDTDHandler()
+=item  void setDTDHandler(QXmlDTDHandler * handler)
 
-=item  void setDeclHandler()
+=item  void setDeclHandler(QXmlDeclHandler * handler)
 
-=item  void setEntityResolver()
+=item  void setEntityResolver(QXmlEntityResolver * handler)
 
-=item  void setErrorHandler()
+=item  void setErrorHandler(QXmlErrorHandler * handler)
 
-=item  void setFeature(, )
+=item  void setFeature(const QString & name, bool value)
 
-=item  void setLexicalHandler()
+=item  void setLexicalHandler(QXmlLexicalHandler * handler)
 
-=item  void setProperty(, )
+=item  void setProperty(const QString & name, void * value)
 
 
 =back

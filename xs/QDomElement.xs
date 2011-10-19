@@ -19,7 +19,7 @@ PROTOTYPES: DISABLE
 ################################################################
 
 ##  QDomElement()
-##  QDomElement()
+##  QDomElement(const QDomElement & x)
   void
 QDomElement::new(...)
 PREINIT:
@@ -58,8 +58,8 @@ PPCODE:
 
 
 
-## QString attribute(, )
-## QString attribute(,  = QString())
+## QString attribute(const QString & name, const QString & defValue)
+## QString attribute(const QString & name, const QString & defValue = QString())
 void
 QDomElement::attribute(...)
 PREINIT:
@@ -102,8 +102,8 @@ PPCODE:
         break;
     }
 
-## QString attributeNS(, , )
-## QString attributeNS(, ,  = QString())
+## QString attributeNS(const QString nsURI, const QString & localName, const QString & defValue)
+## QString attributeNS(const QString nsURI, const QString & localName, const QString & defValue = QString())
 void
 QDomElement::attributeNS(...)
 PREINIT:
@@ -150,7 +150,7 @@ PPCODE:
         break;
     }
 
-## QDomAttr attributeNode()
+## QDomAttr attributeNode(const QString & name)
 void
 QDomElement::attributeNode(...)
 PREINIT:
@@ -164,7 +164,7 @@ PPCODE:
     XSRETURN(1);
     }
 
-## QDomAttr attributeNodeNS(, )
+## QDomAttr attributeNodeNS(const QString & nsURI, const QString & localName)
 void
 QDomElement::attributeNodeNS(...)
 PREINIT:
@@ -193,7 +193,7 @@ PPCODE:
     XSRETURN(1);
     }
 
-## QDomNodeList elementsByTagName()
+## QDomNodeList elementsByTagName(const QString & tagname)
 void
 QDomElement::elementsByTagName(...)
 PREINIT:
@@ -207,7 +207,7 @@ PPCODE:
     XSRETURN(1);
     }
 
-## QDomNodeList elementsByTagNameNS(, )
+## QDomNodeList elementsByTagNameNS(const QString & nsURI, const QString & localName)
 void
 QDomElement::elementsByTagNameNS(...)
 PREINIT:
@@ -223,7 +223,7 @@ PPCODE:
     XSRETURN(1);
     }
 
-## bool hasAttribute()
+## bool hasAttribute(const QString & name)
 void
 QDomElement::hasAttribute(...)
 PREINIT:
@@ -237,7 +237,7 @@ PPCODE:
     XSRETURN(1);
     }
 
-## bool hasAttributeNS(, )
+## bool hasAttributeNS(const QString & nsURI, const QString & localName)
 void
 QDomElement::hasAttributeNS(...)
 PREINIT:
@@ -266,7 +266,7 @@ PPCODE:
     XSRETURN(1);
     }
 
-## QDomElement & operator=()
+## QDomElement & operator=(const QDomElement & arg0)
 void
 QDomElement::operator_assign(...)
 PREINIT:
@@ -280,7 +280,7 @@ PPCODE:
     XSRETURN(1);
     }
 
-## void removeAttribute()
+## void removeAttribute(const QString & name)
 void
 QDomElement::removeAttribute(...)
 PREINIT:
@@ -292,7 +292,7 @@ PPCODE:
     XSRETURN(0);
     }
 
-## void removeAttributeNS(, )
+## void removeAttributeNS(const QString & nsURI, const QString & localName)
 void
 QDomElement::removeAttributeNS(...)
 PREINIT:
@@ -306,7 +306,7 @@ PPCODE:
     XSRETURN(0);
     }
 
-## QDomAttr removeAttributeNode()
+## QDomAttr removeAttributeNode(const QDomAttr & oldAttr)
 void
 QDomElement::removeAttributeNode(...)
 PREINIT:
@@ -320,13 +320,13 @@ PPCODE:
     XSRETURN(1);
     }
 
-## void setAttribute(, )
-## void setAttribute(, )
-## void setAttribute(, )
-## void setAttribute(, )
-## void setAttribute(, )
-## void setAttribute(, )
-## void setAttribute(, )
+## void setAttribute(const QString & name, const QString & value)
+## void setAttribute(const QString & name, qlonglong value)
+## void setAttribute(const QString & name, qulonglong value)
+## void setAttribute(const QString & name, int value)
+## void setAttribute(const QString & name, uint value)
+## void setAttribute(const QString & name, float value)
+## void setAttribute(const QString & name, double value)
 void
 QDomElement::setAttribute(...)
 PREINIT:
@@ -360,7 +360,7 @@ PPCODE:
     (void)THIS->setAttribute(*arg10, arg11);
     XSRETURN(0);
     }
-        else if (sv_isa(ST(1), "Qt::Core::QString") && SvUOK(ST(2))) {
+        else if (sv_isa(ST(1), "Qt::Core::QString") && (SvIOK(ST(2)) || SvUOK(ST(2)))) {
       arg20 = reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(1))));
       arg21 = (qulonglong)SvUV(ST(2));
     (void)THIS->setAttribute(*arg20, arg21);
@@ -372,7 +372,7 @@ PPCODE:
     (void)THIS->setAttribute(*arg30, arg31);
     XSRETURN(0);
     }
-        else if (sv_isa(ST(1), "Qt::Core::QString") && SvUOK(ST(2))) {
+        else if (sv_isa(ST(1), "Qt::Core::QString") && (SvIOK(ST(2)) || SvUOK(ST(2)))) {
       arg40 = reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(1))));
       arg41 = (uint)SvUV(ST(2));
     (void)THIS->setAttribute(*arg40, arg41);
@@ -399,12 +399,12 @@ PPCODE:
         break;
     }
 
-## void setAttributeNS(, , )
-## void setAttributeNS(, , )
-## void setAttributeNS(, , )
-## void setAttributeNS(, , )
-## void setAttributeNS(, , )
-## void setAttributeNS(, , )
+## void setAttributeNS(const QString nsURI, const QString & qName, const QString & value)
+## void setAttributeNS(const QString nsURI, const QString & qName, int value)
+## void setAttributeNS(const QString nsURI, const QString & qName, uint value)
+## void setAttributeNS(const QString nsURI, const QString & qName, qlonglong value)
+## void setAttributeNS(const QString nsURI, const QString & qName, qulonglong value)
+## void setAttributeNS(const QString nsURI, const QString & qName, double value)
 void
 QDomElement::setAttributeNS(...)
 PREINIT:
@@ -444,7 +444,7 @@ PPCODE:
     (void)THIS->setAttributeNS(arg10, *arg11, arg12);
     XSRETURN(0);
     }
-        else if (sv_isobject(ST(1)) && sv_isa(ST(2), "Qt::Core::QString") && SvUOK(ST(3))) {
+        else if (sv_isobject(ST(1)) && sv_isa(ST(2), "Qt::Core::QString") && (SvIOK(ST(3)) || SvUOK(ST(3)))) {
       arg20 = *reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(1))));
       arg21 = reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(2))));
       arg22 = (uint)SvUV(ST(3));
@@ -458,7 +458,7 @@ PPCODE:
     (void)THIS->setAttributeNS(arg30, *arg31, arg32);
     XSRETURN(0);
     }
-        else if (sv_isobject(ST(1)) && sv_isa(ST(2), "Qt::Core::QString") && SvUOK(ST(3))) {
+        else if (sv_isobject(ST(1)) && sv_isa(ST(2), "Qt::Core::QString") && (SvIOK(ST(3)) || SvUOK(ST(3)))) {
       arg40 = *reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(1))));
       arg41 = reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(2))));
       arg42 = (qulonglong)SvUV(ST(3));
@@ -481,7 +481,7 @@ PPCODE:
         break;
     }
 
-## QDomAttr setAttributeNode()
+## QDomAttr setAttributeNode(const QDomAttr & newAttr)
 void
 QDomElement::setAttributeNode(...)
 PREINIT:
@@ -495,7 +495,7 @@ PPCODE:
     XSRETURN(1);
     }
 
-## QDomAttr setAttributeNodeNS()
+## QDomAttr setAttributeNodeNS(const QDomAttr & newAttr)
 void
 QDomElement::setAttributeNodeNS(...)
 PREINIT:
@@ -509,7 +509,7 @@ PPCODE:
     XSRETURN(1);
     }
 
-## void setTagName()
+## void setTagName(const QString & name)
 void
 QDomElement::setTagName(...)
 PREINIT:

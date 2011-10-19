@@ -39,7 +39,7 @@ CODE:
     if(THIS != 0 && !SvREADONLY(SvRV(ST(0))))
         delete THIS;
 
-## void append(, , , )
+## void append(const QString & qName, const QString & uri, const QString & localPart, const QString & value)
 void
 QXmlAttributes::append(...)
 PREINIT:
@@ -81,9 +81,9 @@ PPCODE:
     XSRETURN(1);
     }
 
-## int index()
-## int index()
-## int index(, )
+## int index(const QString & qName)
+## int index(const QLatin1String & qName)
+## int index(const QString & uri, const QString & localPart)
 void
 QXmlAttributes::index(...)
 PREINIT:
@@ -145,7 +145,7 @@ PPCODE:
     XSRETURN(1);
     }
 
-## QString localName()
+## QString localName(int index)
 void
 QXmlAttributes::localName(...)
 PREINIT:
@@ -159,7 +159,7 @@ PPCODE:
     XSRETURN(1);
     }
 
-## QString qName()
+## QString qName(int index)
 void
 QXmlAttributes::qName(...)
 PREINIT:
@@ -173,9 +173,9 @@ PPCODE:
     XSRETURN(1);
     }
 
-## QString type()
-## QString type()
-## QString type(, )
+## QString type(int index)
+## QString type(const QString & qName)
+## QString type(const QString & uri, const QString & localName)
 void
 QXmlAttributes::type(...)
 PREINIT:
@@ -224,7 +224,7 @@ PPCODE:
         break;
     }
 
-## QString uri()
+## QString uri(int index)
 void
 QXmlAttributes::uri(...)
 PREINIT:
@@ -238,10 +238,10 @@ PPCODE:
     XSRETURN(1);
     }
 
-## QString value()
-## QString value()
-## QString value()
-## QString value(, )
+## QString value(int index)
+## QString value(const QString & qName)
+## QString value(const QLatin1String & qName)
+## QString value(const QString & uri, const QString & localName)
 void
 QXmlAttributes::value(...)
 PREINIT:

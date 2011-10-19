@@ -19,7 +19,7 @@ PROTOTYPES: DISABLE
 ################################################################
 
 ##  QDomNamedNodeMap()
-##  QDomNamedNodeMap()
+##  QDomNamedNodeMap(const QDomNamedNodeMap & arg0)
   void
 QDomNamedNodeMap::new(...)
 PREINIT:
@@ -63,7 +63,7 @@ CODE:
     if(THIS != 0 && !SvREADONLY(SvRV(ST(0))))
         delete THIS;
 
-## bool contains()
+## bool contains(const QString & name)
 void
 QDomNamedNodeMap::contains(...)
 PREINIT:
@@ -103,7 +103,7 @@ PPCODE:
     XSRETURN(1);
     }
 
-## QDomNode item()
+## QDomNode item(int index)
 void
 QDomNamedNodeMap::item(...)
 PREINIT:
@@ -130,7 +130,7 @@ PPCODE:
     XSRETURN(1);
     }
 
-## QDomNode namedItem()
+## QDomNode namedItem(const QString & name)
 void
 QDomNamedNodeMap::namedItem(...)
 PREINIT:
@@ -144,7 +144,7 @@ PPCODE:
     XSRETURN(1);
     }
 
-## QDomNode namedItemNS(, )
+## QDomNode namedItemNS(const QString & nsURI, const QString & localName)
 void
 QDomNamedNodeMap::namedItemNS(...)
 PREINIT:
@@ -160,7 +160,7 @@ PPCODE:
     XSRETURN(1);
     }
 
-## bool operator!=()
+## bool operator!=(const QDomNamedNodeMap & arg0)
 void
 QDomNamedNodeMap::operator_not_equal(...)
 PREINIT:
@@ -174,7 +174,7 @@ PPCODE:
     XSRETURN(1);
     }
 
-## QDomNamedNodeMap & operator=()
+## QDomNamedNodeMap & operator=(const QDomNamedNodeMap & arg0)
 void
 QDomNamedNodeMap::operator_assign(...)
 PREINIT:
@@ -188,7 +188,7 @@ PPCODE:
     XSRETURN(1);
     }
 
-## bool operator==()
+## bool operator==(const QDomNamedNodeMap & arg0)
 void
 QDomNamedNodeMap::operator_equal_to(...)
 PREINIT:
@@ -202,7 +202,7 @@ PPCODE:
     XSRETURN(1);
     }
 
-## QDomNode removeNamedItem()
+## QDomNode removeNamedItem(const QString & name)
 void
 QDomNamedNodeMap::removeNamedItem(...)
 PREINIT:
@@ -216,7 +216,7 @@ PPCODE:
     XSRETURN(1);
     }
 
-## QDomNode removeNamedItemNS(, )
+## QDomNode removeNamedItemNS(const QString & nsURI, const QString & localName)
 void
 QDomNamedNodeMap::removeNamedItemNS(...)
 PREINIT:
@@ -232,7 +232,7 @@ PPCODE:
     XSRETURN(1);
     }
 
-## QDomNode setNamedItem()
+## QDomNode setNamedItem(const QDomNode & newNode)
 void
 QDomNamedNodeMap::setNamedItem(...)
 PREINIT:
@@ -246,7 +246,7 @@ PPCODE:
     XSRETURN(1);
     }
 
-## QDomNode setNamedItemNS()
+## QDomNode setNamedItemNS(const QDomNode & newNode)
 void
 QDomNamedNodeMap::setNamedItemNS(...)
 PREINIT:

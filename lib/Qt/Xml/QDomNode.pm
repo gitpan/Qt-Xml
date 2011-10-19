@@ -7,7 +7,7 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_02';
+our $VERSION = '0.01_03';
 
 
 # FIXME: operator overload
@@ -25,11 +25,11 @@ Qt::Xml::QDomNode
 
 =item   QDomNode()
 
-=item   QDomNode()
+=item   QDomNode(const QDomNode & arg0)
 
 =item   ~QDomNode()
 
-=item  QDomNode appendChild()
+=item  QDomNode appendChild(const QDomNode & newChild)
 
 =item  QDomNamedNodeMap attributes()
 
@@ -37,25 +37,25 @@ Qt::Xml::QDomNode
 
 =item  void clear()
 
-=item  QDomNode cloneNode()
+=item  QDomNode cloneNode(bool deep)
 
-=item  QDomNode cloneNode( = true)
+=item  QDomNode cloneNode(bool deep = true)
 
 =item  int columnNumber()
 
 =item  QDomNode firstChild()
 
-=item  QDomElement firstChildElement()
+=item  QDomElement firstChildElement(const QString & tagName)
 
-=item  QDomElement firstChildElement( = QString())
+=item  QDomElement firstChildElement(const QString & tagName = QString())
 
 =item  bool hasAttributes()
 
 =item  bool hasChildNodes()
 
-=item  QDomNode insertAfter(, )
+=item  QDomNode insertAfter(const QDomNode & newChild, const QDomNode & refChild)
 
-=item  QDomNode insertBefore(, )
+=item  QDomNode insertBefore(const QDomNode & newChild, const QDomNode & refChild)
 
 =item  bool isAttr()
 
@@ -83,29 +83,29 @@ Qt::Xml::QDomNode
 
 =item  bool isProcessingInstruction()
 
-=item  bool isSupported(, )
+=item  bool isSupported(const QString & feature, const QString & version)
 
 =item  bool isText()
 
 =item  QDomNode lastChild()
 
-=item  QDomElement lastChildElement()
+=item  QDomElement lastChildElement(const QString & tagName)
 
-=item  QDomElement lastChildElement( = QString())
+=item  QDomElement lastChildElement(const QString & tagName = QString())
 
 =item  int lineNumber()
 
 =item  QString localName()
 
-=item  QDomNode namedItem()
+=item  QDomNode namedItem(const QString & name)
 
 =item  QString namespaceURI()
 
 =item  QDomNode nextSibling()
 
-=item  QDomElement nextSiblingElement()
+=item  QDomElement nextSiblingElement(const QString & taName)
 
-=item  QDomElement nextSiblingElement( = QString())
+=item  QDomElement nextSiblingElement(const QString & taName = QString())
 
 =item  QString nodeName()
 
@@ -115,11 +115,11 @@ Qt::Xml::QDomNode
 
 =item  void normalize()
 
-=item  bool operator!=()
+=item  bool operator!=(const QDomNode & arg0)
 
-=item  QDomNode & operator=()
+=item  QDomNode & operator=(const QDomNode & arg0)
 
-=item  bool operator==()
+=item  bool operator==(const QDomNode & arg0)
 
 =item  QDomDocument ownerDocument()
 
@@ -129,21 +129,21 @@ Qt::Xml::QDomNode
 
 =item  QDomNode previousSibling()
 
-=item  QDomElement previousSiblingElement()
+=item  QDomElement previousSiblingElement(const QString & tagName)
 
-=item  QDomElement previousSiblingElement( = QString())
+=item  QDomElement previousSiblingElement(const QString & tagName = QString())
 
-=item  QDomNode removeChild()
+=item  QDomNode removeChild(const QDomNode & oldChild)
 
-=item  QDomNode replaceChild(, )
+=item  QDomNode replaceChild(const QDomNode & newChild, const QDomNode & oldChild)
 
-=item  void save(, )
+=item  void save(QTextStream & arg0, int arg1)
 
-=item  void save(, , )
+=item  void save(QTextStream & arg0, int arg1, QDomNode::EncodingPolicy arg2)
 
-=item  void setNodeValue()
+=item  void setNodeValue(const QString & arg0)
 
-=item  void setPrefix()
+=item  void setPrefix(const QString & pre)
 
 =item  QDomAttr toAttr()
 

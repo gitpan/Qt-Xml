@@ -92,8 +92,8 @@ PPCODE:
     XSRETURN(1);
     }
 
-## bool feature(, )
-## bool feature(,  = 0)
+## bool feature(const QString & name, bool * ok)
+## bool feature(const QString & name, bool * ok = 0)
 void
 QXmlReader::feature(...)
 PREINIT:
@@ -138,7 +138,7 @@ PPCODE:
         break;
     }
 
-## bool hasFeature()
+## bool hasFeature(const QString & name)
 void
 QXmlReader::hasFeature(...)
 PREINIT:
@@ -152,7 +152,7 @@ PPCODE:
     XSRETURN(1);
     }
 
-## bool hasProperty()
+## bool hasProperty(const QString & name)
 void
 QXmlReader::hasProperty(...)
 PREINIT:
@@ -179,8 +179,8 @@ PPCODE:
     XSRETURN(1);
     }
 
-## bool parse()
-## bool parse()
+## bool parse(const QXmlInputSource & input)
+## bool parse(const QXmlInputSource * input)
 void
 QXmlReader::parse(...)
 PREINIT:
@@ -220,8 +220,8 @@ PPCODE:
         break;
     }
 
-## void * property(, )
-## void * property(,  = 0)
+## void * property(const QString & name, bool * ok)
+## void * property(const QString & name, bool * ok = 0)
 void
 QXmlReader::property(...)
 PREINIT:
@@ -266,7 +266,7 @@ PPCODE:
         break;
     }
 
-## void setContentHandler()
+## void setContentHandler(QXmlContentHandler * handler)
 void
 QXmlReader::setContentHandler(...)
 PREINIT:
@@ -285,7 +285,7 @@ PPCODE:
     XSRETURN(0);
     }
 
-## void setDTDHandler()
+## void setDTDHandler(QXmlDTDHandler * handler)
 void
 QXmlReader::setDTDHandler(...)
 PREINIT:
@@ -304,7 +304,7 @@ PPCODE:
     XSRETURN(0);
     }
 
-## void setDeclHandler()
+## void setDeclHandler(QXmlDeclHandler * handler)
 void
 QXmlReader::setDeclHandler(...)
 PREINIT:
@@ -323,7 +323,7 @@ PPCODE:
     XSRETURN(0);
     }
 
-## void setEntityResolver()
+## void setEntityResolver(QXmlEntityResolver * handler)
 void
 QXmlReader::setEntityResolver(...)
 PREINIT:
@@ -342,7 +342,7 @@ PPCODE:
     XSRETURN(0);
     }
 
-## void setErrorHandler()
+## void setErrorHandler(QXmlErrorHandler * handler)
 void
 QXmlReader::setErrorHandler(...)
 PREINIT:
@@ -361,7 +361,7 @@ PPCODE:
     XSRETURN(0);
     }
 
-## void setFeature(, )
+## void setFeature(const QString & name, bool value)
 void
 QXmlReader::setFeature(...)
 PREINIT:
@@ -375,7 +375,7 @@ PPCODE:
     XSRETURN(0);
     }
 
-## void setLexicalHandler()
+## void setLexicalHandler(QXmlLexicalHandler * handler)
 void
 QXmlReader::setLexicalHandler(...)
 PREINIT:
@@ -394,7 +394,7 @@ PPCODE:
     XSRETURN(0);
     }
 
-## void setProperty(, )
+## void setProperty(const QString & name, void * value)
 void
 QXmlReader::setProperty(...)
 PREINIT:

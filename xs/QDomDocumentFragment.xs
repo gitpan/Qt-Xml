@@ -19,7 +19,7 @@ PROTOTYPES: DISABLE
 ################################################################
 
 ##  QDomDocumentFragment()
-##  QDomDocumentFragment()
+##  QDomDocumentFragment(const QDomDocumentFragment & x)
   void
 QDomDocumentFragment::new(...)
 PREINIT:
@@ -71,7 +71,7 @@ PPCODE:
     XSRETURN(1);
     }
 
-## QDomDocumentFragment & operator=()
+## QDomDocumentFragment & operator=(const QDomDocumentFragment & arg0)
 void
 QDomDocumentFragment::operator_assign(...)
 PREINIT:

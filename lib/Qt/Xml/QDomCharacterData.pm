@@ -7,8 +7,9 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_02';
-our $ISA     = qw/Qt::Xml::QDomNode/;
+our $VERSION = '0.01_03';
+use base qw/Qt::Xml::QDomNode/;
+#our @ISA = qw/Qt::Xml::QDomNode/;
 
 
 # FIXME: operator overload
@@ -26,27 +27,27 @@ Qt::Xml::QDomCharacterData
 
 =item   QDomCharacterData()
 
-=item   QDomCharacterData()
+=item   QDomCharacterData(const QDomCharacterData & x)
 
-=item  void appendData()
+=item  void appendData(const QString & arg)
 
 =item  QString data()
 
-=item  void deleteData(, )
+=item  void deleteData(unsigned long offset, unsigned long count)
 
-=item  void insertData(, )
+=item  void insertData(unsigned long offset, const QString & arg)
 
 =item  uint length()
 
 =item  QDomNode::NodeType nodeType()
 
-=item  QDomCharacterData & operator=()
+=item  QDomCharacterData & operator=(const QDomCharacterData & arg0)
 
-=item  void replaceData(, , )
+=item  void replaceData(unsigned long offset, unsigned long count, const QString & arg)
 
-=item  void setData()
+=item  void setData(const QString & arg0)
 
-=item  QString substringData(, )
+=item  QString substringData(unsigned long offset, unsigned long count)
 
 
 =back

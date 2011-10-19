@@ -19,7 +19,7 @@ PROTOTYPES: DISABLE
 ################################################################
 
 ##  QDomNotation()
-##  QDomNotation()
+##  QDomNotation(const QDomNotation & x)
   void
 QDomNotation::new(...)
 PREINIT:
@@ -71,7 +71,7 @@ PPCODE:
     XSRETURN(1);
     }
 
-## QDomNotation & operator=()
+## QDomNotation & operator=(const QDomNotation & arg0)
 void
 QDomNotation::operator_assign(...)
 PREINIT:

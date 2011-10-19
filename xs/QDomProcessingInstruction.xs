@@ -19,7 +19,7 @@ PROTOTYPES: DISABLE
 ################################################################
 
 ##  QDomProcessingInstruction()
-##  QDomProcessingInstruction()
+##  QDomProcessingInstruction(const QDomProcessingInstruction & x)
   void
 QDomProcessingInstruction::new(...)
 PREINIT:
@@ -84,7 +84,7 @@ PPCODE:
     XSRETURN(1);
     }
 
-## QDomProcessingInstruction & operator=()
+## QDomProcessingInstruction & operator=(const QDomProcessingInstruction & arg0)
 void
 QDomProcessingInstruction::operator_assign(...)
 PREINIT:
@@ -98,7 +98,7 @@ PPCODE:
     XSRETURN(1);
     }
 
-## void setData()
+## void setData(const QString & d)
 void
 QDomProcessingInstruction::setData(...)
 PREINIT:

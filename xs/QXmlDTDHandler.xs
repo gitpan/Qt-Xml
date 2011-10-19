@@ -40,7 +40,7 @@ PPCODE:
     XSRETURN(1);
     }
 
-## bool notationDecl(, , )
+## bool notationDecl(const QString & name, const QString & publicId, const QString & systemId)
 void
 QXmlDTDHandler::notationDecl(...)
 PREINIT:
@@ -58,7 +58,7 @@ PPCODE:
     XSRETURN(1);
     }
 
-## bool unparsedEntityDecl(, , , )
+## bool unparsedEntityDecl(const QString & name, const QString & publicId, const QString & systemId, const QString & notationName)
 void
 QXmlDTDHandler::unparsedEntityDecl(...)
 PREINIT:

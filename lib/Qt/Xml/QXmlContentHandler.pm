@@ -7,7 +7,7 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_02';
+our $VERSION = '0.01_03';
 
 
 # FIXME: operator overload
@@ -25,29 +25,29 @@ Qt::Xml::QXmlContentHandler
 
 =item   ~QXmlContentHandler()
 
-=item  bool characters()
+=item  bool characters(const QString & ch)
 
 =item  bool endDocument()
 
-=item  bool endElement(, , )
+=item  bool endElement(const QString & namespaceURI, const QString & localName, const QString & qName)
 
-=item  bool endPrefixMapping()
+=item  bool endPrefixMapping(const QString & prefix)
 
 =item  QString errorString()
 
-=item  bool ignorableWhitespace()
+=item  bool ignorableWhitespace(const QString & ch)
 
-=item  bool processingInstruction(, )
+=item  bool processingInstruction(const QString & target, const QString & data)
 
-=item  void setDocumentLocator()
+=item  void setDocumentLocator(QXmlLocator * locator)
 
-=item  bool skippedEntity()
+=item  bool skippedEntity(const QString & name)
 
 =item  bool startDocument()
 
-=item  bool startElement(, , , )
+=item  bool startElement(const QString & namespaceURI, const QString & localName, const QString & qName, const QXmlAttributes & atts)
 
-=item  bool startPrefixMapping(, )
+=item  bool startPrefixMapping(const QString & prefix, const QString & uri)
 
 
 =back

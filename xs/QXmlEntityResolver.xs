@@ -40,7 +40,7 @@ PPCODE:
     XSRETURN(1);
     }
 
-## bool resolveEntity(, , )
+## bool resolveEntity(const QString & publicId, const QString & systemId, QXmlInputSource *& ret)
 void
 QXmlEntityResolver::resolveEntity(...)
 PREINIT:

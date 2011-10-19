@@ -27,7 +27,7 @@ CODE:
     if(THIS != 0 && !SvREADONLY(SvRV(ST(0))))
         delete THIS;
 
-## bool comment()
+## bool comment(const QString & ch)
 void
 QXmlLexicalHandler::comment(...)
 PREINIT:
@@ -67,7 +67,7 @@ PPCODE:
     XSRETURN(1);
     }
 
-## bool endEntity()
+## bool endEntity(const QString & name)
 void
 QXmlLexicalHandler::endEntity(...)
 PREINIT:
@@ -107,7 +107,7 @@ PPCODE:
     XSRETURN(1);
     }
 
-## bool startDTD(, , )
+## bool startDTD(const QString & name, const QString & publicId, const QString & systemId)
 void
 QXmlLexicalHandler::startDTD(...)
 PREINIT:
@@ -125,7 +125,7 @@ PPCODE:
     XSRETURN(1);
     }
 
-## bool startEntity()
+## bool startEntity(const QString & name)
 void
 QXmlLexicalHandler::startEntity(...)
 PREINIT:

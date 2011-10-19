@@ -7,8 +7,9 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_02';
-our $ISA     = qw/Qt::Xml::QDomNode/;
+our $VERSION = '0.01_03';
+use base qw/Qt::Xml::QDomNode/;
+#our @ISA = qw/Qt::Xml::QDomNode/;
 
 
 # FIXME: operator overload
@@ -26,7 +27,7 @@ Qt::Xml::QDomDocumentType
 
 =item   QDomDocumentType()
 
-=item   QDomDocumentType()
+=item   QDomDocumentType(const QDomDocumentType & x)
 
 =item  QDomNamedNodeMap entities()
 
@@ -38,7 +39,7 @@ Qt::Xml::QDomDocumentType
 
 =item  QDomNamedNodeMap notations()
 
-=item  QDomDocumentType & operator=()
+=item  QDomDocumentType & operator=(const QDomDocumentType & arg0)
 
 =item  QString publicId()
 

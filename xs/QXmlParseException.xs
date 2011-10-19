@@ -18,13 +18,13 @@ PROTOTYPES: DISABLE
 #### 
 ################################################################
 
-##  QXmlParseException()
-##  QXmlParseException(, , , , )
-##  QXmlParseException(, , , ,  = QString())
-##  QXmlParseException(, , ,  = QString(),  = QString())
-##  QXmlParseException(, ,  = -1,  = QString(),  = QString())
-##  QXmlParseException(,  = -1,  = -1,  = QString(),  = QString())
-##  QXmlParseException( = QString(),  = -1,  = -1,  = QString(),  = QString())
+##  QXmlParseException(const QXmlParseException & other)
+##  QXmlParseException(const QString & name, int c, int l, const QString & p, const QString & s)
+##  QXmlParseException(const QString & name, int c, int l, const QString & p, const QString & s = QString())
+##  QXmlParseException(const QString & name, int c, int l, const QString & p = QString(), const QString & s = QString())
+##  QXmlParseException(const QString & name, int c, int l = -1, const QString & p = QString(), const QString & s = QString())
+##  QXmlParseException(const QString & name, int c = -1, int l = -1, const QString & p = QString(), const QString & s = QString())
+##  QXmlParseException(const QString & name = QString(), int c = -1, int l = -1, const QString & p = QString(), const QString & s = QString())
   void
 QXmlParseException::new(...)
 PREINIT:

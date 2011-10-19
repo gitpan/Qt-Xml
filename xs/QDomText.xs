@@ -19,7 +19,7 @@ PROTOTYPES: DISABLE
 ################################################################
 
 ##  QDomText()
-##  QDomText()
+##  QDomText(const QDomText & x)
   void
 QDomText::new(...)
 PREINIT:
@@ -71,7 +71,7 @@ PPCODE:
     XSRETURN(1);
     }
 
-## QDomText & operator=()
+## QDomText & operator=(const QDomText & arg0)
 void
 QDomText::operator_assign(...)
 PREINIT:
@@ -85,7 +85,7 @@ PPCODE:
     XSRETURN(1);
     }
 
-## QDomText splitText()
+## QDomText splitText(int offset)
 void
 QDomText::splitText(...)
 PREINIT:

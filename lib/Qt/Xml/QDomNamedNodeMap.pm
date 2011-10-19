@@ -7,7 +7,7 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_02';
+our $VERSION = '0.01_03';
 
 
 # FIXME: operator overload
@@ -25,37 +25,37 @@ Qt::Xml::QDomNamedNodeMap
 
 =item   QDomNamedNodeMap()
 
-=item   QDomNamedNodeMap()
+=item   QDomNamedNodeMap(const QDomNamedNodeMap & arg0)
 
 =item   ~QDomNamedNodeMap()
 
-=item  bool contains()
+=item  bool contains(const QString & name)
 
 =item  int count()
 
 =item  bool isEmpty()
 
-=item  QDomNode item()
+=item  QDomNode item(int index)
 
 =item  uint length()
 
-=item  QDomNode namedItem()
+=item  QDomNode namedItem(const QString & name)
 
-=item  QDomNode namedItemNS(, )
+=item  QDomNode namedItemNS(const QString & nsURI, const QString & localName)
 
-=item  bool operator!=()
+=item  bool operator!=(const QDomNamedNodeMap & arg0)
 
-=item  QDomNamedNodeMap & operator=()
+=item  QDomNamedNodeMap & operator=(const QDomNamedNodeMap & arg0)
 
-=item  bool operator==()
+=item  bool operator==(const QDomNamedNodeMap & arg0)
 
-=item  QDomNode removeNamedItem()
+=item  QDomNode removeNamedItem(const QString & name)
 
-=item  QDomNode removeNamedItemNS(, )
+=item  QDomNode removeNamedItemNS(const QString & nsURI, const QString & localName)
 
-=item  QDomNode setNamedItem()
+=item  QDomNode setNamedItem(const QDomNode & newNode)
 
-=item  QDomNode setNamedItemNS()
+=item  QDomNode setNamedItemNS(const QDomNode & newNode)
 
 =item  int size()
 

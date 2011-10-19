@@ -19,7 +19,7 @@ PROTOTYPES: DISABLE
 ################################################################
 
 ##  QDomAttr()
-##  QDomAttr()
+##  QDomAttr(const QDomAttr & x)
   void
 QDomAttr::new(...)
 PREINIT:
@@ -84,7 +84,7 @@ PPCODE:
     XSRETURN(1);
     }
 
-## QDomAttr & operator=()
+## QDomAttr & operator=(const QDomAttr & arg0)
 void
 QDomAttr::operator_assign(...)
 PREINIT:
@@ -111,7 +111,7 @@ PPCODE:
     XSRETURN(1);
     }
 
-## void setValue()
+## void setValue(const QString & arg0)
 void
 QDomAttr::setValue(...)
 PREINIT:

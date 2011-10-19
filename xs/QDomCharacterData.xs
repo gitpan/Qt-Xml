@@ -19,7 +19,7 @@ PROTOTYPES: DISABLE
 ################################################################
 
 ##  QDomCharacterData()
-##  QDomCharacterData()
+##  QDomCharacterData(const QDomCharacterData & x)
   void
 QDomCharacterData::new(...)
 PREINIT:
@@ -58,7 +58,7 @@ PPCODE:
 
 
 
-## void appendData()
+## void appendData(const QString & arg)
 void
 QDomCharacterData::appendData(...)
 PREINIT:
@@ -83,28 +83,28 @@ PPCODE:
     XSRETURN(1);
     }
 
-## void deleteData(, )
+## void deleteData(unsigned long offset, unsigned long count)
 void
 QDomCharacterData::deleteData(...)
 PREINIT:
 unsigned long arg00;
 unsigned long arg01;
 PPCODE:
-    if (SvUOK(ST(1)) && SvUOK(ST(2))) {
+    if ((SvIOK(ST(1)) || SvUOK(ST(1))) && (SvIOK(ST(2)) || SvUOK(ST(2)))) {
       arg00 = (unsigned long)SvUV(ST(1));
       arg01 = (unsigned long)SvUV(ST(2));
     (void)THIS->deleteData(arg00, arg01);
     XSRETURN(0);
     }
 
-## void insertData(, )
+## void insertData(unsigned long offset, const QString & arg)
 void
 QDomCharacterData::insertData(...)
 PREINIT:
 unsigned long arg00;
 QString * arg01;
 PPCODE:
-    if (SvUOK(ST(1)) && sv_isa(ST(2), "Qt::Core::QString")) {
+    if ((SvIOK(ST(1)) || SvUOK(ST(1))) && sv_isa(ST(2), "Qt::Core::QString")) {
       arg00 = (unsigned long)SvUV(ST(1));
       arg01 = reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(2))));
     (void)THIS->insertData(arg00, *arg01);
@@ -137,7 +137,7 @@ PPCODE:
     XSRETURN(1);
     }
 
-## QDomCharacterData & operator=()
+## QDomCharacterData & operator=(const QDomCharacterData & arg0)
 void
 QDomCharacterData::operator_assign(...)
 PREINIT:
@@ -151,7 +151,7 @@ PPCODE:
     XSRETURN(1);
     }
 
-## void replaceData(, , )
+## void replaceData(unsigned long offset, unsigned long count, const QString & arg)
 void
 QDomCharacterData::replaceData(...)
 PREINIT:
@@ -159,7 +159,7 @@ unsigned long arg00;
 unsigned long arg01;
 QString * arg02;
 PPCODE:
-    if (SvUOK(ST(1)) && SvUOK(ST(2)) && sv_isa(ST(3), "Qt::Core::QString")) {
+    if ((SvIOK(ST(1)) || SvUOK(ST(1))) && (SvIOK(ST(2)) || SvUOK(ST(2))) && sv_isa(ST(3), "Qt::Core::QString")) {
       arg00 = (unsigned long)SvUV(ST(1));
       arg01 = (unsigned long)SvUV(ST(2));
       arg02 = reinterpret_cast<QString *>(SvIV((SV*)SvRV(ST(3))));
@@ -167,7 +167,7 @@ PPCODE:
     XSRETURN(0);
     }
 
-## void setData()
+## void setData(const QString & arg0)
 void
 QDomCharacterData::setData(...)
 PREINIT:
@@ -179,14 +179,14 @@ PPCODE:
     XSRETURN(0);
     }
 
-## QString substringData(, )
+## QString substringData(unsigned long offset, unsigned long count)
 void
 QDomCharacterData::substringData(...)
 PREINIT:
 unsigned long arg00;
 unsigned long arg01;
 PPCODE:
-    if (SvUOK(ST(1)) && SvUOK(ST(2))) {
+    if ((SvIOK(ST(1)) || SvUOK(ST(1))) && (SvIOK(ST(2)) || SvUOK(ST(2)))) {
       arg00 = (unsigned long)SvUV(ST(1));
       arg01 = (unsigned long)SvUV(ST(2));
     QString ret = THIS->substringData(arg00, arg01);

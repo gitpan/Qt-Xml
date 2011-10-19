@@ -19,7 +19,7 @@ PROTOTYPES: DISABLE
 ################################################################
 
 ##  QDomEntityReference()
-##  QDomEntityReference()
+##  QDomEntityReference(const QDomEntityReference & x)
   void
 QDomEntityReference::new(...)
 PREINIT:
@@ -71,7 +71,7 @@ PPCODE:
     XSRETURN(1);
     }
 
-## QDomEntityReference & operator=()
+## QDomEntityReference & operator=(const QDomEntityReference & arg0)
 void
 QDomEntityReference::operator_assign(...)
 PREINIT:

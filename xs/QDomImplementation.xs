@@ -19,7 +19,7 @@ PROTOTYPES: DISABLE
 ################################################################
 
 ##  QDomImplementation()
-##  QDomImplementation()
+##  QDomImplementation(const QDomImplementation & arg0)
   void
 QDomImplementation::new(...)
 PREINIT:
@@ -63,7 +63,7 @@ CODE:
     if(THIS != 0 && !SvREADONLY(SvRV(ST(0))))
         delete THIS;
 
-## QDomDocument createDocument(, , )
+## QDomDocument createDocument(const QString & nsURI, const QString & qName, const QDomDocumentType & doctype)
 void
 QDomImplementation::createDocument(...)
 PREINIT:
@@ -81,7 +81,7 @@ PPCODE:
     XSRETURN(1);
     }
 
-## QDomDocumentType createDocumentType(, , )
+## QDomDocumentType createDocumentType(const QString & qName, const QString & publicId, const QString & systemId)
 void
 QDomImplementation::createDocumentType(...)
 PREINIT:
@@ -99,7 +99,7 @@ PPCODE:
     XSRETURN(1);
     }
 
-## bool hasFeature(, )
+## bool hasFeature(const QString & feature, const QString & version)
 void
 QDomImplementation::hasFeature(...)
 PREINIT:
@@ -141,7 +141,7 @@ PPCODE:
     XSRETURN(1);
     }
 
-## bool operator!=()
+## bool operator!=(const QDomImplementation & arg0)
 void
 QDomImplementation::operator_not_equal(...)
 PREINIT:
@@ -155,7 +155,7 @@ PPCODE:
     XSRETURN(1);
     }
 
-## QDomImplementation & operator=()
+## QDomImplementation & operator=(const QDomImplementation & arg0)
 void
 QDomImplementation::operator_assign(...)
 PREINIT:
@@ -169,7 +169,7 @@ PPCODE:
     XSRETURN(1);
     }
 
-## bool operator==()
+## bool operator==(const QDomImplementation & arg0)
 void
 QDomImplementation::operator_equal_to(...)
 PREINIT:
@@ -183,7 +183,7 @@ PPCODE:
     XSRETURN(1);
     }
 
-## static void setInvalidDataPolicy()
+## static void setInvalidDataPolicy(QDomImplementation::InvalidDataPolicy policy)
 void
 QDomImplementation::setInvalidDataPolicy(...)
 PREINIT:

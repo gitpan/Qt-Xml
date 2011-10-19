@@ -19,7 +19,7 @@ PROTOTYPES: DISABLE
 ################################################################
 
 ##  QDomCDATASection()
-##  QDomCDATASection()
+##  QDomCDATASection(const QDomCDATASection & x)
   void
 QDomCDATASection::new(...)
 PREINIT:
@@ -71,7 +71,7 @@ PPCODE:
     XSRETURN(1);
     }
 
-## QDomCDATASection & operator=()
+## QDomCDATASection & operator=(const QDomCDATASection & arg0)
 void
 QDomCDATASection::operator_assign(...)
 PREINIT:

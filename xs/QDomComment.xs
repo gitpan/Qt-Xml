@@ -19,7 +19,7 @@ PROTOTYPES: DISABLE
 ################################################################
 
 ##  QDomComment()
-##  QDomComment()
+##  QDomComment(const QDomComment & x)
   void
 QDomComment::new(...)
 PREINIT:
@@ -71,7 +71,7 @@ PPCODE:
     XSRETURN(1);
     }
 
-## QDomComment & operator=()
+## QDomComment & operator=(const QDomComment & arg0)
 void
 QDomComment::operator_assign(...)
 PREINIT:

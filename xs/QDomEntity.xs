@@ -19,7 +19,7 @@ PROTOTYPES: DISABLE
 ################################################################
 
 ##  QDomEntity()
-##  QDomEntity()
+##  QDomEntity(const QDomEntity & x)
   void
 QDomEntity::new(...)
 PREINIT:
@@ -84,7 +84,7 @@ PPCODE:
     XSRETURN(1);
     }
 
-## QDomEntity & operator=()
+## QDomEntity & operator=(const QDomEntity & arg0)
 void
 QDomEntity::operator_assign(...)
 PREINIT:

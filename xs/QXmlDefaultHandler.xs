@@ -26,7 +26,10 @@ QXmlDefaultHandler *ret;
 PPCODE:
     if (1) {
       
-    Perl_croak(aTHX_ "Trying to create abstract class object");
+    ret = new QXmlDefaultHandler();
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Xml::QXmlDefaultHandler", (void *)ret);
+    XSRETURN(1);
     }
 
 ##  ~QXmlDefaultHandler()
@@ -36,7 +39,7 @@ CODE:
     if(THIS != 0 && !SvREADONLY(SvRV(ST(0))))
         delete THIS;
 
-## bool attributeDecl(, , , , )
+## bool attributeDecl(const QString & eName, const QString & aName, const QString & type, const QString & valueDefault, const QString & value)
 void
 QXmlDefaultHandler::attributeDecl(...)
 PREINIT:
@@ -58,7 +61,7 @@ PPCODE:
     XSRETURN(1);
     }
 
-## bool characters()
+## bool characters(const QString & ch)
 void
 QXmlDefaultHandler::characters(...)
 PREINIT:
@@ -72,7 +75,7 @@ PPCODE:
     XSRETURN(1);
     }
 
-## bool comment()
+## bool comment(const QString & ch)
 void
 QXmlDefaultHandler::comment(...)
 PREINIT:
@@ -125,7 +128,7 @@ PPCODE:
     XSRETURN(1);
     }
 
-## bool endElement(, , )
+## bool endElement(const QString & namespaceURI, const QString & localName, const QString & qName)
 void
 QXmlDefaultHandler::endElement(...)
 PREINIT:
@@ -143,7 +146,7 @@ PPCODE:
     XSRETURN(1);
     }
 
-## bool endEntity()
+## bool endEntity(const QString & name)
 void
 QXmlDefaultHandler::endEntity(...)
 PREINIT:
@@ -157,7 +160,7 @@ PPCODE:
     XSRETURN(1);
     }
 
-## bool endPrefixMapping()
+## bool endPrefixMapping(const QString & prefix)
 void
 QXmlDefaultHandler::endPrefixMapping(...)
 PREINIT:
@@ -171,7 +174,7 @@ PPCODE:
     XSRETURN(1);
     }
 
-## bool error()
+## bool error(const QXmlParseException & exception)
 void
 QXmlDefaultHandler::error(...)
 PREINIT:
@@ -198,7 +201,7 @@ PPCODE:
     XSRETURN(1);
     }
 
-## bool externalEntityDecl(, , )
+## bool externalEntityDecl(const QString & name, const QString & publicId, const QString & systemId)
 void
 QXmlDefaultHandler::externalEntityDecl(...)
 PREINIT:
@@ -216,7 +219,7 @@ PPCODE:
     XSRETURN(1);
     }
 
-## bool fatalError()
+## bool fatalError(const QXmlParseException & exception)
 void
 QXmlDefaultHandler::fatalError(...)
 PREINIT:
@@ -230,7 +233,7 @@ PPCODE:
     XSRETURN(1);
     }
 
-## bool ignorableWhitespace()
+## bool ignorableWhitespace(const QString & ch)
 void
 QXmlDefaultHandler::ignorableWhitespace(...)
 PREINIT:
@@ -244,7 +247,7 @@ PPCODE:
     XSRETURN(1);
     }
 
-## bool internalEntityDecl(, )
+## bool internalEntityDecl(const QString & name, const QString & value)
 void
 QXmlDefaultHandler::internalEntityDecl(...)
 PREINIT:
@@ -260,7 +263,7 @@ PPCODE:
     XSRETURN(1);
     }
 
-## bool notationDecl(, , )
+## bool notationDecl(const QString & name, const QString & publicId, const QString & systemId)
 void
 QXmlDefaultHandler::notationDecl(...)
 PREINIT:
@@ -278,7 +281,7 @@ PPCODE:
     XSRETURN(1);
     }
 
-## bool processingInstruction(, )
+## bool processingInstruction(const QString & target, const QString & data)
 void
 QXmlDefaultHandler::processingInstruction(...)
 PREINIT:
@@ -294,7 +297,7 @@ PPCODE:
     XSRETURN(1);
     }
 
-## bool resolveEntity(, , )
+## bool resolveEntity(const QString & publicId, const QString & systemId, QXmlInputSource *& ret)
 void
 QXmlDefaultHandler::resolveEntity(...)
 PREINIT:
@@ -312,7 +315,7 @@ PPCODE:
     XSRETURN(1);
     }
 
-## void setDocumentLocator()
+## void setDocumentLocator(QXmlLocator * locator)
 void
 QXmlDefaultHandler::setDocumentLocator(...)
 PREINIT:
@@ -331,7 +334,7 @@ PPCODE:
     XSRETURN(0);
     }
 
-## bool skippedEntity()
+## bool skippedEntity(const QString & name)
 void
 QXmlDefaultHandler::skippedEntity(...)
 PREINIT:
@@ -358,7 +361,7 @@ PPCODE:
     XSRETURN(1);
     }
 
-## bool startDTD(, , )
+## bool startDTD(const QString & name, const QString & publicId, const QString & systemId)
 void
 QXmlDefaultHandler::startDTD(...)
 PREINIT:
@@ -389,7 +392,7 @@ PPCODE:
     XSRETURN(1);
     }
 
-## bool startElement(, , , )
+## bool startElement(const QString & namespaceURI, const QString & localName, const QString & qName, const QXmlAttributes & atts)
 void
 QXmlDefaultHandler::startElement(...)
 PREINIT:
@@ -409,7 +412,7 @@ PPCODE:
     XSRETURN(1);
     }
 
-## bool startEntity()
+## bool startEntity(const QString & name)
 void
 QXmlDefaultHandler::startEntity(...)
 PREINIT:
@@ -423,7 +426,7 @@ PPCODE:
     XSRETURN(1);
     }
 
-## bool startPrefixMapping(, )
+## bool startPrefixMapping(const QString & prefix, const QString & uri)
 void
 QXmlDefaultHandler::startPrefixMapping(...)
 PREINIT:
@@ -439,7 +442,7 @@ PPCODE:
     XSRETURN(1);
     }
 
-## bool unparsedEntityDecl(, , , )
+## bool unparsedEntityDecl(const QString & name, const QString & publicId, const QString & systemId, const QString & notationName)
 void
 QXmlDefaultHandler::unparsedEntityDecl(...)
 PREINIT:
@@ -459,7 +462,7 @@ PPCODE:
     XSRETURN(1);
     }
 
-## bool warning()
+## bool warning(const QXmlParseException & exception)
 void
 QXmlDefaultHandler::warning(...)
 PREINIT:

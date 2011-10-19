@@ -19,7 +19,7 @@ PROTOTYPES: DISABLE
 ################################################################
 
 ##  QXmlInputSource()
-##  QXmlInputSource()
+##  QXmlInputSource(QIODevice * dev)
   void
 QXmlInputSource::new(...)
 PREINIT:
@@ -118,8 +118,8 @@ PPCODE:
     XSRETURN(0);
     }
 
-## void setData()
-## void setData()
+## void setData(const QString & dat)
+## void setData(const QByteArray & dat)
 void
 QXmlInputSource::setData(...)
 PREINIT:

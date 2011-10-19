@@ -7,7 +7,7 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_02';
+our $VERSION = '0.01_03';
 
 
 # FIXME: operator overload
@@ -27,7 +27,7 @@ Qt::Xml::QXmlEntityResolver
 
 =item  QString errorString()
 
-=item  bool resolveEntity(, , )
+=item  bool resolveEntity(const QString & publicId, const QString & systemId, QXmlInputSource *& ret)
 
 
 =back

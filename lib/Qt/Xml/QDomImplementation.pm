@@ -7,7 +7,7 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_02';
+our $VERSION = '0.01_03';
 
 
 # FIXME: operator overload
@@ -25,27 +25,27 @@ Qt::Xml::QDomImplementation
 
 =item   QDomImplementation()
 
-=item   QDomImplementation()
+=item   QDomImplementation(const QDomImplementation & arg0)
 
 =item   ~QDomImplementation()
 
-=item  QDomDocument createDocument(, , )
+=item  QDomDocument createDocument(const QString & nsURI, const QString & qName, const QDomDocumentType & doctype)
 
-=item  QDomDocumentType createDocumentType(, , )
+=item  QDomDocumentType createDocumentType(const QString & qName, const QString & publicId, const QString & systemId)
 
-=item  bool hasFeature(, )
+=item  bool hasFeature(const QString & feature, const QString & version)
 
 =item  static QDomImplementation::InvalidDataPolicy invalidDataPolicy()
 
 =item  bool isNull()
 
-=item  bool operator!=()
+=item  bool operator!=(const QDomImplementation & arg0)
 
-=item  QDomImplementation & operator=()
+=item  QDomImplementation & operator=(const QDomImplementation & arg0)
 
-=item  bool operator==()
+=item  bool operator==(const QDomImplementation & arg0)
 
-=item  static void setInvalidDataPolicy()
+=item  static void setInvalidDataPolicy(QDomImplementation::InvalidDataPolicy policy)
 
 
 =back

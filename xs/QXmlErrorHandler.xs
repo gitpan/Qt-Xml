@@ -27,7 +27,7 @@ CODE:
     if(THIS != 0 && !SvREADONLY(SvRV(ST(0))))
         delete THIS;
 
-## bool error()
+## bool error(const QXmlParseException & exception)
 void
 QXmlErrorHandler::error(...)
 PREINIT:
@@ -54,7 +54,7 @@ PPCODE:
     XSRETURN(1);
     }
 
-## bool fatalError()
+## bool fatalError(const QXmlParseException & exception)
 void
 QXmlErrorHandler::fatalError(...)
 PREINIT:
@@ -68,7 +68,7 @@ PPCODE:
     XSRETURN(1);
     }
 
-## bool warning()
+## bool warning(const QXmlParseException & exception)
 void
 QXmlErrorHandler::warning(...)
 PREINIT:

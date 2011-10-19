@@ -50,7 +50,7 @@ PPCODE:
     XSRETURN(0);
     }
 
-## QString prefix()
+## QString prefix(const QString & arg0)
 void
 QXmlNamespaceSupport::prefix(...)
 PREINIT:
@@ -65,7 +65,7 @@ PPCODE:
     }
 
 ## QStringList prefixes()
-## QStringList prefixes()
+## QStringList prefixes(const QString & arg0)
 void
 QXmlNamespaceSupport::prefixes(...)
 PREINIT:
@@ -101,7 +101,7 @@ PPCODE:
         break;
     }
 
-## void processName(, , , )
+## void processName(const QString & arg0, bool arg1, QString & arg2, QString & arg3)
 void
 QXmlNamespaceSupport::processName(...)
 PREINIT:
@@ -141,7 +141,7 @@ PPCODE:
     XSRETURN(0);
     }
 
-## void setPrefix(, )
+## void setPrefix(const QString & arg0, const QString & arg1)
 void
 QXmlNamespaceSupport::setPrefix(...)
 PREINIT:
@@ -155,7 +155,7 @@ PPCODE:
     XSRETURN(0);
     }
 
-## void splitName(, , )
+## void splitName(const QString & arg0, QString & arg1, QString & arg2)
 void
 QXmlNamespaceSupport::splitName(...)
 PREINIT:
@@ -171,7 +171,7 @@ PPCODE:
     XSRETURN(0);
     }
 
-## QString uri()
+## QString uri(const QString & arg0)
 void
 QXmlNamespaceSupport::uri(...)
 PREINIT:

@@ -7,7 +7,7 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_02';
+our $VERSION = '0.01_03';
 
 
 # FIXME: operator overload
@@ -29,23 +29,23 @@ Qt::Xml::QXmlNamespaceSupport
 
 =item  void popContext()
 
-=item  QString prefix()
+=item  QString prefix(const QString & arg0)
 
 =item  QStringList prefixes()
 
-=item  QStringList prefixes()
+=item  QStringList prefixes(const QString & arg0)
 
-=item  void processName(, , , )
+=item  void processName(const QString & arg0, bool arg1, QString & arg2, QString & arg3)
 
 =item  void pushContext()
 
 =item  void reset()
 
-=item  void setPrefix(, )
+=item  void setPrefix(const QString & arg0, const QString & arg1)
 
-=item  void splitName(, , )
+=item  void splitName(const QString & arg0, QString & arg1, QString & arg2)
 
-=item  QString uri()
+=item  QString uri(const QString & arg0)
 
 
 =back

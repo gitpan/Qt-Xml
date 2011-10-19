@@ -7,7 +7,7 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_02';
+our $VERSION = '0.01_03';
 
 
 # FIXME: operator overload
@@ -25,13 +25,13 @@ Qt::Xml::QXmlDeclHandler
 
 =item   ~QXmlDeclHandler()
 
-=item  bool attributeDecl(, , , , )
+=item  bool attributeDecl(const QString & eName, const QString & aName, const QString & type, const QString & valueDefault, const QString & value)
 
 =item  QString errorString()
 
-=item  bool externalEntityDecl(, , )
+=item  bool externalEntityDecl(const QString & name, const QString & publicId, const QString & systemId)
 
-=item  bool internalEntityDecl(, )
+=item  bool internalEntityDecl(const QString & name, const QString & value)
 
 
 =back

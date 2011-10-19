@@ -7,7 +7,7 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_02';
+our $VERSION = '0.01_03';
 
 
 # FIXME: operator overload
@@ -25,21 +25,21 @@ Qt::Xml::QXmlLexicalHandler
 
 =item   ~QXmlLexicalHandler()
 
-=item  bool comment()
+=item  bool comment(const QString & ch)
 
 =item  bool endCDATA()
 
 =item  bool endDTD()
 
-=item  bool endEntity()
+=item  bool endEntity(const QString & name)
 
 =item  QString errorString()
 
 =item  bool startCDATA()
 
-=item  bool startDTD(, , )
+=item  bool startDTD(const QString & name, const QString & publicId, const QString & systemId)
 
-=item  bool startEntity()
+=item  bool startEntity(const QString & name)
 
 
 =back

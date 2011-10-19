@@ -19,7 +19,7 @@ PROTOTYPES: DISABLE
 ################################################################
 
 ##  QDomDocumentType()
-##  QDomDocumentType()
+##  QDomDocumentType(const QDomDocumentType & x)
   void
 QDomDocumentType::new(...)
 PREINIT:
@@ -123,7 +123,7 @@ PPCODE:
     XSRETURN(1);
     }
 
-## QDomDocumentType & operator=()
+## QDomDocumentType & operator=(const QDomDocumentType & arg0)
 void
 QDomDocumentType::operator_assign(...)
 PREINIT:

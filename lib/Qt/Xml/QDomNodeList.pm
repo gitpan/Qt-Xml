@@ -7,7 +7,7 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_02';
+our $VERSION = '0.01_03';
 
 
 # FIXME: operator overload
@@ -25,25 +25,25 @@ Qt::Xml::QDomNodeList
 
 =item   QDomNodeList()
 
-=item   QDomNodeList()
+=item   QDomNodeList(const QDomNodeList & arg0)
 
 =item   ~QDomNodeList()
 
-=item  QDomNode at()
+=item  QDomNode at(int index)
 
 =item  int count()
 
 =item  bool isEmpty()
 
-=item  QDomNode item()
+=item  QDomNode item(int index)
 
 =item  uint length()
 
-=item  bool operator!=()
+=item  bool operator!=(const QDomNodeList & arg0)
 
-=item  QDomNodeList & operator=()
+=item  QDomNodeList & operator=(const QDomNodeList & arg0)
 
-=item  bool operator==()
+=item  bool operator==(const QDomNodeList & arg0)
 
 =item  int size()
 

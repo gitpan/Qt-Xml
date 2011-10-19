@@ -7,7 +7,7 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_02';
+our $VERSION = '0.01_03';
 
 
 # FIXME: operator overload
@@ -25,13 +25,13 @@ Qt::Xml::QXmlErrorHandler
 
 =item   ~QXmlErrorHandler()
 
-=item  bool error()
+=item  bool error(const QXmlParseException & exception)
 
 =item  QString errorString()
 
-=item  bool fatalError()
+=item  bool fatalError(const QXmlParseException & exception)
 
-=item  bool warning()
+=item  bool warning(const QXmlParseException & exception)
 
 
 =back

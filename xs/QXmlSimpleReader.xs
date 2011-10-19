@@ -26,7 +26,10 @@ QXmlSimpleReader *ret;
 PPCODE:
     if (1) {
       
-    Perl_croak(aTHX_ "Trying to create abstract class object");
+    ret = new QXmlSimpleReader();
+    ST(0) = sv_newmortal();
+    sv_setref_pv(ST(0), "Qt::Xml::QXmlSimpleReader", (void *)ret);
+    XSRETURN(1);
     }
 
 ##  ~QXmlSimpleReader()
@@ -101,8 +104,8 @@ PPCODE:
     XSRETURN(1);
     }
 
-## bool feature(, )
-## bool feature(,  = 0)
+## bool feature(const QString & name, bool * ok)
+## bool feature(const QString & name, bool * ok = 0)
 void
 QXmlSimpleReader::feature(...)
 PREINIT:
@@ -147,7 +150,7 @@ PPCODE:
         break;
     }
 
-## bool hasFeature()
+## bool hasFeature(const QString & name)
 void
 QXmlSimpleReader::hasFeature(...)
 PREINIT:
@@ -161,7 +164,7 @@ PPCODE:
     XSRETURN(1);
     }
 
-## bool hasProperty()
+## bool hasProperty(const QString & name)
 void
 QXmlSimpleReader::hasProperty(...)
 PREINIT:
@@ -188,9 +191,9 @@ PPCODE:
     XSRETURN(1);
     }
 
-## bool parse()
-## bool parse()
-## bool parse(, )
+## bool parse(const QXmlInputSource & input)
+## bool parse(const QXmlInputSource * input)
+## bool parse(const QXmlInputSource * input, bool incremental)
 void
 QXmlSimpleReader::parse(...)
 PREINIT:
@@ -266,8 +269,8 @@ PPCODE:
     XSRETURN(1);
     }
 
-## void * property(, )
-## void * property(,  = 0)
+## void * property(const QString & name, bool * ok)
+## void * property(const QString & name, bool * ok = 0)
 void
 QXmlSimpleReader::property(...)
 PREINIT:
@@ -312,7 +315,7 @@ PPCODE:
         break;
     }
 
-## void setContentHandler()
+## void setContentHandler(QXmlContentHandler * handler)
 void
 QXmlSimpleReader::setContentHandler(...)
 PREINIT:
@@ -331,7 +334,7 @@ PPCODE:
     XSRETURN(0);
     }
 
-## void setDTDHandler()
+## void setDTDHandler(QXmlDTDHandler * handler)
 void
 QXmlSimpleReader::setDTDHandler(...)
 PREINIT:
@@ -350,7 +353,7 @@ PPCODE:
     XSRETURN(0);
     }
 
-## void setDeclHandler()
+## void setDeclHandler(QXmlDeclHandler * handler)
 void
 QXmlSimpleReader::setDeclHandler(...)
 PREINIT:
@@ -369,7 +372,7 @@ PPCODE:
     XSRETURN(0);
     }
 
-## void setEntityResolver()
+## void setEntityResolver(QXmlEntityResolver * handler)
 void
 QXmlSimpleReader::setEntityResolver(...)
 PREINIT:
@@ -388,7 +391,7 @@ PPCODE:
     XSRETURN(0);
     }
 
-## void setErrorHandler()
+## void setErrorHandler(QXmlErrorHandler * handler)
 void
 QXmlSimpleReader::setErrorHandler(...)
 PREINIT:
@@ -407,7 +410,7 @@ PPCODE:
     XSRETURN(0);
     }
 
-## void setFeature(, )
+## void setFeature(const QString & name, bool value)
 void
 QXmlSimpleReader::setFeature(...)
 PREINIT:
@@ -421,7 +424,7 @@ PPCODE:
     XSRETURN(0);
     }
 
-## void setLexicalHandler()
+## void setLexicalHandler(QXmlLexicalHandler * handler)
 void
 QXmlSimpleReader::setLexicalHandler(...)
 PREINIT:
@@ -440,7 +443,7 @@ PPCODE:
     XSRETURN(0);
     }
 
-## void setProperty(, )
+## void setProperty(const QString & name, void * value)
 void
 QXmlSimpleReader::setProperty(...)
 PREINIT:

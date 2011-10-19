@@ -7,7 +7,7 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_02';
+our $VERSION = '0.01_03';
 
 
 # FIXME: operator overload
@@ -25,7 +25,7 @@ Qt::Xml::QXmlInputSource
 
 =item   QXmlInputSource()
 
-=item   QXmlInputSource()
+=item   QXmlInputSource(QIODevice * dev)
 
 =item   ~QXmlInputSource()
 
@@ -37,9 +37,9 @@ Qt::Xml::QXmlInputSource
 
 =item  void reset()
 
-=item  void setData()
+=item  void setData(const QString & dat)
 
-=item  void setData()
+=item  void setData(const QByteArray & dat)
 
 
 =back

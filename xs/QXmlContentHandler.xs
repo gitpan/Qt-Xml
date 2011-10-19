@@ -27,7 +27,7 @@ CODE:
     if(THIS != 0 && !SvREADONLY(SvRV(ST(0))))
         delete THIS;
 
-## bool characters()
+## bool characters(const QString & ch)
 void
 QXmlContentHandler::characters(...)
 PREINIT:
@@ -54,7 +54,7 @@ PPCODE:
     XSRETURN(1);
     }
 
-## bool endElement(, , )
+## bool endElement(const QString & namespaceURI, const QString & localName, const QString & qName)
 void
 QXmlContentHandler::endElement(...)
 PREINIT:
@@ -72,7 +72,7 @@ PPCODE:
     XSRETURN(1);
     }
 
-## bool endPrefixMapping()
+## bool endPrefixMapping(const QString & prefix)
 void
 QXmlContentHandler::endPrefixMapping(...)
 PREINIT:
@@ -99,7 +99,7 @@ PPCODE:
     XSRETURN(1);
     }
 
-## bool ignorableWhitespace()
+## bool ignorableWhitespace(const QString & ch)
 void
 QXmlContentHandler::ignorableWhitespace(...)
 PREINIT:
@@ -113,7 +113,7 @@ PPCODE:
     XSRETURN(1);
     }
 
-## bool processingInstruction(, )
+## bool processingInstruction(const QString & target, const QString & data)
 void
 QXmlContentHandler::processingInstruction(...)
 PREINIT:
@@ -129,7 +129,7 @@ PPCODE:
     XSRETURN(1);
     }
 
-## void setDocumentLocator()
+## void setDocumentLocator(QXmlLocator * locator)
 void
 QXmlContentHandler::setDocumentLocator(...)
 PREINIT:
@@ -148,7 +148,7 @@ PPCODE:
     XSRETURN(0);
     }
 
-## bool skippedEntity()
+## bool skippedEntity(const QString & name)
 void
 QXmlContentHandler::skippedEntity(...)
 PREINIT:
@@ -175,7 +175,7 @@ PPCODE:
     XSRETURN(1);
     }
 
-## bool startElement(, , , )
+## bool startElement(const QString & namespaceURI, const QString & localName, const QString & qName, const QXmlAttributes & atts)
 void
 QXmlContentHandler::startElement(...)
 PREINIT:
@@ -195,7 +195,7 @@ PPCODE:
     XSRETURN(1);
     }
 
-## bool startPrefixMapping(, )
+## bool startPrefixMapping(const QString & prefix, const QString & uri)
 void
 QXmlContentHandler::startPrefixMapping(...)
 PREINIT:

@@ -27,7 +27,7 @@ CODE:
     if(THIS != 0 && !SvREADONLY(SvRV(ST(0))))
         delete THIS;
 
-## bool attributeDecl(, , , , )
+## bool attributeDecl(const QString & eName, const QString & aName, const QString & type, const QString & valueDefault, const QString & value)
 void
 QXmlDeclHandler::attributeDecl(...)
 PREINIT:
@@ -62,7 +62,7 @@ PPCODE:
     XSRETURN(1);
     }
 
-## bool externalEntityDecl(, , )
+## bool externalEntityDecl(const QString & name, const QString & publicId, const QString & systemId)
 void
 QXmlDeclHandler::externalEntityDecl(...)
 PREINIT:
@@ -80,7 +80,7 @@ PPCODE:
     XSRETURN(1);
     }
 
-## bool internalEntityDecl(, )
+## bool internalEntityDecl(const QString & name, const QString & value)
 void
 QXmlDeclHandler::internalEntityDecl(...)
 PREINIT:

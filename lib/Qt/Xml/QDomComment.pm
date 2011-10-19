@@ -7,8 +7,9 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_02';
-our $ISA     = qw/Qt::Xml::QDomCharacterData/;
+our $VERSION = '0.01_03';
+use base qw/Qt::Xml::QDomCharacterData/;
+#our @ISA = qw/Qt::Xml::QDomCharacterData/;
 
 
 # FIXME: operator overload
@@ -26,11 +27,11 @@ Qt::Xml::QDomComment
 
 =item   QDomComment()
 
-=item   QDomComment()
+=item   QDomComment(const QDomComment & x)
 
 =item  QDomNode::NodeType nodeType()
 
-=item  QDomComment & operator=()
+=item  QDomComment & operator=(const QDomComment & arg0)
 
 
 =back

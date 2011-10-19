@@ -19,7 +19,7 @@ PROTOTYPES: DISABLE
 ################################################################
 
 ##  QDomNodeList()
-##  QDomNodeList()
+##  QDomNodeList(const QDomNodeList & arg0)
   void
 QDomNodeList::new(...)
 PREINIT:
@@ -63,7 +63,7 @@ CODE:
     if(THIS != 0 && !SvREADONLY(SvRV(ST(0))))
         delete THIS;
 
-## QDomNode at()
+## QDomNode at(int index)
 void
 QDomNodeList::at(...)
 PREINIT:
@@ -103,7 +103,7 @@ PPCODE:
     XSRETURN(1);
     }
 
-## QDomNode item()
+## QDomNode item(int index)
 void
 QDomNodeList::item(...)
 PREINIT:
@@ -130,7 +130,7 @@ PPCODE:
     XSRETURN(1);
     }
 
-## bool operator!=()
+## bool operator!=(const QDomNodeList & arg0)
 void
 QDomNodeList::operator_not_equal(...)
 PREINIT:
@@ -144,7 +144,7 @@ PPCODE:
     XSRETURN(1);
     }
 
-## QDomNodeList & operator=()
+## QDomNodeList & operator=(const QDomNodeList & arg0)
 void
 QDomNodeList::operator_assign(...)
 PREINIT:
@@ -158,7 +158,7 @@ PPCODE:
     XSRETURN(1);
     }
 
-## bool operator==()
+## bool operator==(const QDomNodeList & arg0)
 void
 QDomNodeList::operator_equal_to(...)
 PREINIT:

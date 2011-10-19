@@ -7,7 +7,7 @@ use strict;
 use warnings;
 #use Carp;
 
-our $VERSION = '0.01_02';
+our $VERSION = '0.01_03';
 
 
 # FIXME: operator overload
@@ -27,39 +27,39 @@ Qt::Xml::QXmlAttributes
 
 =item   ~QXmlAttributes()
 
-=item  void append(, , , )
+=item  void append(const QString & qName, const QString & uri, const QString & localPart, const QString & value)
 
 =item  void clear()
 
 =item  int count()
 
-=item  int index()
+=item  int index(const QString & qName)
 
-=item  int index()
+=item  int index(const QLatin1String & qName)
 
-=item  int index(, )
+=item  int index(const QString & uri, const QString & localPart)
 
 =item  int length()
 
-=item  QString localName()
+=item  QString localName(int index)
 
-=item  QString qName()
+=item  QString qName(int index)
 
-=item  QString type()
+=item  QString type(int index)
 
-=item  QString type()
+=item  QString type(const QString & qName)
 
-=item  QString type(, )
+=item  QString type(const QString & uri, const QString & localName)
 
-=item  QString uri()
+=item  QString uri(int index)
 
-=item  QString value()
+=item  QString value(int index)
 
-=item  QString value()
+=item  QString value(const QString & qName)
 
-=item  QString value()
+=item  QString value(const QLatin1String & qName)
 
-=item  QString value(, )
+=item  QString value(const QString & uri, const QString & localName)
 
 
 =back
