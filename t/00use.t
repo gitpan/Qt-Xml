@@ -5,7 +5,7 @@
 
 # change 'tests => 1' to 'tests => last_test_to_print';
 
-use Test::More tests => 33;
+use Test::More tests => 34;
 BEGIN {
 use_ok('Qt::Xml');
 use_ok('Qt::Xml');
@@ -15,6 +15,7 @@ use_ok('Qt::Xml::QDomComment');
 use_ok('Qt::Xml::QDomEntity');
 use_ok('Qt::Xml::QXmlLexicalHandler');
 use_ok('Qt::Xml::QDomElement');
+use_ok('Qt::Xml::Template');
 use_ok('Qt::Xml::QXmlDTDHandler');
 use_ok('Qt::Xml::QXmlContentHandler');
 use_ok('Qt::Xml::QDomEntityReference');
